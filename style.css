@@ -73,3 +73,10 @@
     0.955
   ); /* custom */
 }
+
+
+.switchHeader {
+  font-size: 55px;
+  position: absolute;
+  top:26%
+}
