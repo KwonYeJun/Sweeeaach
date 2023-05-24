@@ -1,9 +1,10 @@
 const container = document.getElementById("container");
+const Pillar = document.querySelector(".keyPillar");
 let positionY = 0;
 let movingDown = false;
 const step = 50; // 이동 거리를 조정하려면 이 값을 변경하세요
 
-container.style.transform = `translateY(${positionY}px)`;
+Pillar.style.transform = `translateY(${positionY}px)`;
 
 window.addEventListener("keydown", (event) => {
   const key = event.key;
@@ -29,7 +30,7 @@ window.addEventListener("keyup", (event) => {
 
 function moveDown() {
   positionY += step;
-  container.style.transform = `translateY(${positionY}px)`;
+  Pillar.style.transform = `translateY(${positionY}px)`;
 }
 
 function moveUp() {
@@ -37,5 +38,5 @@ function moveUp() {
   if (positionY < 0) {
     positionY = 0;
   }
-  container.style.transform = `translateY(${positionY}px)`;
+  Pillar.style.transform = `translateY(${positionY}px)`;
 }
