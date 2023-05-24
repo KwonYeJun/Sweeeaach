@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 const Pillar = document.querySelector(".keyPillar");
 let positionY = 0;
 let movingDown = false;
-const step = 50; // 이동 거리를 조정하려면 이 값을 변경하세요
+const step = 30; // 이동 거리를 조정하려면 이 값을 변경하세요
 
 Pillar.style.transform = `translateY(${positionY}px)`;
 
