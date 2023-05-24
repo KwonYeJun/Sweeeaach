@@ -63,8 +63,8 @@
 .keyHook {
   position: absolute;
   top: 45%;
-  left: 40.2%;
-  transition: all 500ms cubic-bezier(0.115, 0.495, 0.185, 0.955); /* custom */
+  left: 40.4%;
+  transition: all 0.1s cubic-bezier(0.115, 0.495, 0.185, 0.955); /* custom */
 
   transition-timing-function: cubic-bezier(
     0.115,
