@@ -1,3 +1,5 @@
+// import { SVG } from "@svgdotjs/svg.js";
+
 const container = document.getElementById("container");
 let positionY = 0;
 let movingDown = false;
