@@ -23,7 +23,6 @@
   /* top: 50%;
   left: 50%; */
   transform: translate(-50%, -50%);
-  transition: all 0.04s;
 }
 
 .keySwitch {
@@ -34,23 +33,43 @@
 
 .keyPillar {
   position: absolute;
-  right: 45.5%;
+  top: 35%;
+  right: 45.1%;
+  transition: all 0.04s ease;
 }
 
 .keyMiddlePillar {
   position: absolute;
-  top: 52.5%;
-  right: 40.8%;
+  top: 45.5%;
+  right: 45.9%;
+  transition: all 0.1s cubic-bezier(0.125, 0.79, 0.625, -0.215); /* custom */
+
+  transition-timing-function: cubic-bezier(
+    0.125,
+    0.79,
+    0.625,
+    -0.215
+  ); /* custom */
+  z-index: 2;
 }
 
 .middleKeyHook {
   position: absolute;
   top: 57%;
-  left:44.5%
+  left: 44.5%;
+  z-index: 1;
 }
 
 .keyHook {
-  position:absolute;
-  top:55%;
-  left: 43%;
+  position: absolute;
+  top: 45%;
+  left: 40.2%;
+  transition: all 500ms cubic-bezier(0.115, 0.495, 0.185, 0.955); /* custom */
+
+  transition-timing-function: cubic-bezier(
+    0.115,
+    0.495,
+    0.185,
+    0.955
+  ); /* custom */
 }
