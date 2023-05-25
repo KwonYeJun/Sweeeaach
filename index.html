@@ -20,28 +20,26 @@
 
     <script type="module">
       import * as THREE from "three";
-      // import { GLTFLoader } from "https://unpkg.com/three/examples/jsm/loaders/GLTFLoader.js";
       import { GLTFLoader } from "GLTFLoader";
 
       let scene = new THREE.Scene();
       scene.background = new THREE.Color("skyblue");
 
       let camera = new THREE.PerspectiveCamera(
-        45,
+        12,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
       );
 
       // 카메라의 위치 설정 (x: 0, y: 0, z: 5)
-      camera.position.set(0, 0, 50);
+      camera.position.set(0, 0, 13);
 
-      let PLight = new THREE.PointLight();
-      let ALight = new THREE.AmbientLight();
-      PLight.position.set(50, 50, 50);
-      scene.add(PLight, ALight);
+      let directionalLight = new THREE.DirectionalLight(0xffffff, 1); // 색상과 강도 설정
+      directionalLight.position.set(0, 1, 0); // 조명의 위치 설정
+      scene.add(directionalLight);
 
-      let loader = new GLTFLoader();
+      let loader = new GLTFLoader(); // GLTFLoader 불러오기
 
       let renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector("#canvas"),
@@ -53,16 +51,8 @@
 
       loader.load("/switch.gltf", function (gltf) {
         scene.add(gltf.scene);
-        renderer.render(scene, camera); // 랜더링
+        renderer.render(scene, camera); // 렌더링
       });
-
-      function animate() {
-        requestAnimationFrame(animate);
-        // keyboard.rotation.x += 0.01;
-        // keyboard.rotation.y += 0.01;
-        renderer.render(scene, camera);
-      }
-      animate();
     </script>
   </body>
 </html>
