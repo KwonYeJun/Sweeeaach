@@ -5,10 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/paper@0.12.11/dist/paper-full.min.js"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <style>
+      #root {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
-    <canvas id="root"></canvas>
-    <script type="module" src="/index.js"></script>
+    <canvas id="root" resize></canvas>
+    <script>
+      // Paper.js 코드
+      // Paper.js에서 그래픽 요소를 그리기 위해선
+      // PaperScope를 생성하고, 해당 스코프 안에서 작업을 진행해야 한다.
+      const papers = new paper.PaperScope();
+      paper.setup("root"); // 캔버스 ID를 전달하여 Paper.js와 캔버스를 연결
+
+      // 스위치 위치와 스타일을 설정
+      const switchPosition = new paper.Point(100, 100); // 스위치 위치 (x, y)
+      const switchSize = new paper.Size(80, 40); // 스위치 크기 (너비, 높이)
+      const switchColor = "lightgray"; // 스위치 색상
+      const switchStrokeColor = "black"; // 스위치 테두리 색상
+      const switchStrokeWidth = 2; // 스위치 테두리 두께
+
+      // 스위치 생성
+
+      const switchPath = new paper.Path.Rectangle({
+        point: switchPosition,
+        size: switchSize,
+        fillColor: switchColor,
+        strokeColor: switchStrokeColor,
+        strokeWidth: switchStrokeWidth,
+      });
+
+      paper.view.draw(); //  그림 그리기
+    </script>
   </body>
 </html>
