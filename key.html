@@ -29,6 +29,7 @@
 
       paper.project.importSVG("./switch.svg", function (item) {
         // 아이템을 불러와서 객체에 저장함
+        console.log(item);
         console.log(item.children);
         const centerX = paper.view.center.x;
         const centerY = paper.view.center.y;
@@ -41,22 +42,21 @@
 
         console.log(group);
 
-        switchLine.onMouseEnter = function (event) {
-          // event.preventDefault();
-        };
-        switchLine.onMouseLeave = function (event) {
-          // event.preventDefault();
-        };
-
-        group.onMouseEnter = function (event) {
-          console.log('마우스 확인')
+        switchHouse.onMouseEnter = function (event) {
+          console.log("마우스 확인");
           group.scale(1.2);
         };
 
-        group.onMouseLeave = function (event) {
+        switchHouse.onMouseLeave = function (event) {
           group.scale(0.8);
         };
       });
+      group[1].onMouseEnter = function (event) {
+        event.preventDefault();
+      };
+      group[1].onMouseLeave = function (event) {
+        event.preventDefault();
+      };
       paper.view.draw(); //  그림 그리기
     </script>
   </body>
