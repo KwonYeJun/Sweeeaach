@@ -25,47 +25,36 @@
       const papers = new paper.PaperScope();
       paper.setup(document.getElementById("root")); // 캔버스 ID를 전달하여 Paper.js와 캔버스를 연결
 
+      let scale = 1;
+
       paper.project.importSVG("./switch.svg", function (item) {
         // 아이템을 불러와서 객체에 저장함
-        const switchBox = item.children[0];
-        console.log(switchBox);
-        const switchHouse = item.children["keyboard-house"];
-        const switchLine = item.children["keyboard-line"];
-
-
+        console.log(item.children);
         const centerX = paper.view.center.x;
         const centerY = paper.view.center.y;
         item.position = new paper.Point(centerX, centerY);
 
-        let originalScale = 0.8;
+        const switchHouse = item.children["keyboard-house"];
+        const switchLine = item.children["keyboard-line"];
 
-        // item.onMouseEnter = function (event) {
-        //   item.scale(1.2);
-        //   console.log(`${switchHouse} enter 인식`);
-        //   console.log(`${switchLine} enter인식`);
-        // };
+        const group = new paper.Group([switchHouse, switchLine]);
 
-        // item.onMouseLeave = function (event) {
-        //   item.scale(0.8);
-        //   console.log(`${switchHouse} enter 떠남`);
-        //   console.log(`${switchLine} enter 떠남`);
-        // };
+        console.log(group);
 
         switchLine.onMouseEnter = function (event) {
-          event.preventDefault();
+          // event.preventDefault();
         };
-
         switchLine.onMouseLeave = function (event) {
-          event.preventDefault();
+          // event.preventDefault();
         };
 
-        switchHouse.onMouseEnter = function (event) {
-          console.log(`스위치하우스 인식됨`)
-
+        group.onMouseEnter = function (event) {
+          console.log('마우스 확인')
+          group.scale(1.2);
         };
 
-        switchHouse.onMouseLeave = function (event) {
-          event.preventDefault();
+        group.onMouseLeave = function (event) {
+          group.scale(0.8);
         };
       });
       paper.view.draw(); //  그림 그리기
