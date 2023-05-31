@@ -27,18 +27,45 @@
 
       paper.project.importSVG("./switch.svg", function (item) {
         // 아이템을 불러와서 객체에 저장함
+        const switchBox = item.children[0];
+        console.log(switchBox);
+        const switchHouse = item.children["keyboard-house"];
+        const switchLine = item.children["keyboard-line"];
+
+
         const centerX = paper.view.center.x;
         const centerY = paper.view.center.y;
-
         item.position = new paper.Point(centerX, centerY);
 
-        item.onMouseEnter = function (event) {
-          item.scale(1.2);
+        let originalScale = 0.8;
+
+        // item.onMouseEnter = function (event) {
+        //   item.scale(1.2);
+        //   console.log(`${switchHouse} enter 인식`);
+        //   console.log(`${switchLine} enter인식`);
+        // };
+
+        // item.onMouseLeave = function (event) {
+        //   item.scale(0.8);
+        //   console.log(`${switchHouse} enter 떠남`);
+        //   console.log(`${switchLine} enter 떠남`);
+        // };
+
+        switchLine.onMouseEnter = function (event) {
+          event.preventDefault();
         };
 
-        item.onMouseLeave = function (event) {
-          item.scale(0.8);
-          console.log("마우스 떠남");
+        switchLine.onMouseLeave = function (event) {
+          event.preventDefault();
+        };
+
+        switchHouse.onMouseEnter = function (event) {
+          console.log(`스위치하우스 인식됨`)
+
+        };
+
+        switchHouse.onMouseLeave = function (event) {
+          event.preventDefault();
         };
       });
       paper.view.draw(); //  그림 그리기
