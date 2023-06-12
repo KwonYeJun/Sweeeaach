@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://unpkg.com/paper@0.12.11/dist/paper-full.min.js"></script>
-    <link rel="stylesheet" href="./style.css" type="text/css" />
-    <style>
-      #root {
-        border: 1px solid black;
-        width: 100vw;
-        height: 100vh;
-        transition: transform 0.2s ease;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="root"></canvas>
-    <script>
-      // Paper.js 코드
-      // Paper.js에서 그래픽 요소를 그리기 위해선
-      // PaperScope를 생성하고, 해당 스코프 안에서 작업을 진행해야 한다.
-      const papers = new paper.PaperScope();
-      const tool = new paper.Tool();
-      paper.setup(document.getElementById("root")); // 캔버스 ID를 전달하여 Paper.js와 캔버스를 연결
 
-      let scale = 1;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/paper@0.12.11/dist/paper-full.min.js"></script>
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+  <style>
+    #root {
+      border: 1px solid black;
+      width: 100vw;
+      height: 100vh;
+      transition: transform 0.2s ease;
+    }
+  </style>
+</head>
 
-      let isKeyPressed = false;
+<body>
+  <canvas id="root"></canvas>
+  <script>
+    // Paper.js 코드
+    // Paper.js에서 그래픽 요소를 그리기 위해선
+    // PaperScope를 생성하고, 해당 스코프 안에서 작업을 진행해야 한다.
+    const papers = new paper.PaperScope();
+    const tool = new paper.Tool();
+    paper.setup(document.getElementById("root")); // 캔버스 ID를 전달하여 Paper.js와 캔버스를 연결
+    let boolean = true;
 
-      // let backSpace;
+    let scale = 1;
 
-      let keyboardArray = [];
+    let isKeyPressed = false;
 
-      tool.onKeyDown = function (event) {
-        console.log("키 입력됨");
-      };
-      paper.project.importSVG("./SVG/Keyboard.svg", function (item) {
-        // 아이템을 불러와서 객체에 저장함
-        console.log(item);
-        const centerX = paper.view.center.x;
-        const centerY = paper.view.center.y;
-        item.position = new paper.Point(centerX, centerY);
-        const switchHouse = Object.values(item.children[2]["_children"]);
-        const backSpace = item.children[2]["_children"]["BackSpace"];
-        tool.activate();
-        backSpace.onKeyDown = tool.onKeyDown;
-      });
-      paper.view.draw(); //  그림 그리기
+    // let backSpace;
 
-      document.addEventListener("keydown", function (event) {
+    let keyboardArray = [];
+    tool.onKeyDown = function (event) {
+      console.log("키 입력됨");
+    };
+    paper.project.importSVG("./SVG/Keyboard.svg", function (item) {
+      // 아이템을 불러와서 객체에 저장함
+      console.log(item);
+      const centerX = paper.view.center.x;
+      const centerY = paper.view.center.y;
+      item.position = new paper.Point(centerX, centerY);
+      const switchHouse = Object.values(item.children[2]["_children"]);
+      const backSpace = item.children[2]["_children"]["BackSpace"];
+      tool.activate();
+      backSpace.onKeyDown = tool.onKeyDown;
+    });
+    paper.view.draw(); //  그림 그리기
+
+    if (boolean === true) {
+      function handleKeyDown(event) {
         console.log("키 입력 감지됨");
         playSound();
-      });
-
-      document.addEventListener("keyup", function (event) {
-        console.log("키 입력 감지됨");
-        playSoundTwo();
-      });
-
-      function playSound() {
-        const clickOnPush = new Audio("./keysound_edit/click_onPush.m4a");
-        clickOnPush.play();
-        clickOnPush.volume = Math.random();
+       return boolean = false;
       }
+    }
+    else{
+    document.removeEventListener("keydown", handleKeyDown);
+    boolean = true;
+  }
+    // 이벤트 리스너 등록
+    document.addEventListener("keydown", handleKeyDown);
 
-      function playSoundTwo() {
-        const clickOnLeave = new Audio("./keysound_edit/click_leavePush.m4a");
-        clickOnLeave.play();
-        clickOnPush.volume = Math.random();
-      }
-    </script>
-  </body>
+    document.addEventListener("keyup", function (event) {
+      console.log("키 입력 감지됨");
+      playSoundTwo();
+    });
+
+    function playSound() {
+      const clickOnPush = new Audio("./keysound_edit/click_onPush.m4a");
+      clickOnPush.play();
+      clickOnPush.volume = Math.random();
+    }
+
+    function playSoundTwo() {
+      const clickOnLeave = new Audio("./keysound_edit/click_leavePush.m4a");
+      clickOnLeave.play();
+      clickOnPush.volume = Math.random();
+    }
+  </script>
+</body>
+
 </html>
