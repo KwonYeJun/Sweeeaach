@@ -10,8 +10,8 @@
     <style>
       #root {
         border: 1px solid black;
-        width: 390px;
-        height: 844px;
+        width: 100vw;
+        height: 100vh;
         transition: transform 0.2s ease;
       }
     </style>
@@ -27,36 +27,19 @@
 
       let scale = 1;
 
-      paper.project.importSVG("./switch.svg", function (item) {
+      paper.project.importSVG("./SVG/Keyboard.svg", function (item) {
         // 아이템을 불러와서 객체에 저장함
         console.log(item);
-        console.log(item.children);
         const centerX = paper.view.center.x;
         const centerY = paper.view.center.y;
         item.position = new paper.Point(centerX, centerY);
 
-        const switchHouse = item.children["keyboard-house"];
-        const switchLine = item.children["keyboard-line"];
+        const switchHouse = Object.values(item.children[2]["_children"]);
+        const backSpace = item.children[2]["_children"]["BackSpace"];
 
-        const group = new paper.Group([switchHouse, switchLine]);
-
-        console.log(group);
-
-        switchHouse.onMouseEnter = function (event) {
-          console.log("마우스 확인");
-          group.scale(1.2);
-        };
-
-        switchHouse.onMouseLeave = function (event) {
-          group.scale(0.8);
-        };
+        console.log(switchHouse);
+        console.log(backSpace);
       });
-      group[1].onMouseEnter = function (event) {
-        event.preventDefault();
-      };
-      group[1].onMouseLeave = function (event) {
-        event.preventDefault();
-      };
       paper.view.draw(); //  그림 그리기
     </script>
   </body>
