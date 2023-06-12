@@ -1,4 +1,4 @@
-import path from 'path';
+// import path from 'path';
 // CommonJs방식으로 작성을 해주어야 한다.
 const path = require('path');
 
@@ -12,8 +12,8 @@ module.exports = {
   module:{
     rules:[
       {
-        test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
-        use: ['babel-loader','ts-loader']
+        test: [ /\.js$/, /\.jsx$/],
+        use: ['babel-loader']
       }
     ]
   },
