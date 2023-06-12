@@ -27,19 +27,25 @@
 
       let scale = 1;
 
+      let backSpace;
+
+      let keyboardArray = [];
+
       paper.project.importSVG("./SVG/Keyboard.svg", function (item) {
         // 아이템을 불러와서 객체에 저장함
         console.log(item);
         const centerX = paper.view.center.x;
         const centerY = paper.view.center.y;
         item.position = new paper.Point(centerX, centerY);
-
         const switchHouse = Object.values(item.children[2]["_children"]);
-        const backSpace = item.children[2]["_children"]["BackSpace"];
-
-        console.log(switchHouse);
+        backSpace = item.children[2]["_children"]["BackSpace"];
+        tool.onKeyDown = function (event) {
+          backSpace.scale(1.1);
+        };
         console.log(backSpace);
+        console.log(switchHouse);
       });
+
       paper.view.draw(); //  그림 그리기
     </script>
   </body>
