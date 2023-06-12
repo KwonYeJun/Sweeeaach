@@ -53,13 +53,11 @@
       document.addEventListener("keydown", function (event) {
         console.log("키 입력 감지됨");
         playSound();
-        event.preventDefault();
       });
 
       document.addEventListener("keyup", function (event) {
         console.log("키 입력 감지됨");
         playSoundTwo();
-        event.preventDefault();
       });
 
       function playSound() {
