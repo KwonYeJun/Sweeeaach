@@ -1,9 +1,17 @@
+// 리액트 라이브러리
 import React from "react";
+
+// 리액트 컴포넌트
+import Title from "./components/title";
+import Switches from "./components/selectSwitch";
+import HelpText from "./components/helpText";
 
 export default function App() {
   return (
     <div className="container">
-      <h1>App이 잘 들어왔는지 실험</h1>
+      <Title />
+      <Switches />
+      <HelpText />
     </div>
   );
 }
