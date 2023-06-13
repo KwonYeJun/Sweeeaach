@@ -10,13 +10,17 @@ function App() {
     };
 
     const playSound = () => {
-      const clickOnPush = new Audio("./keysound_edit/click_onPush.m4a");
+      const clickOnPush = new Audio(
+        "./src/audio/keysound_edit/click_onPush.m4a"
+      );
       clickOnPush.play();
       clickOnPush.volume = Math.random();
     };
 
     const playSoundTwo = () => {
-      const clickOnLeave = new Audio("./keysound_edit/click_leavePush.m4a");
+      const clickOnLeave = new Audio(
+        "./src/audio/keysound_edit/click_leavePush.m4a"
+      );
       clickOnLeave.play();
       clickOnLeave.volume = Math.random();
     };
