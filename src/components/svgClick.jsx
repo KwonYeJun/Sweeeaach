@@ -26,12 +26,14 @@ export default function KeyBoardSVG() {
   }, [svgLoaded]);
 
   const handleKeyDown = (event) => {
-    console.log("키 입력 감지됨");
+    const pressedKey = event.key;
+    console.log(`${pressedKey} 누름`);
     playSound();
   };
 
   const handleKeyUp = (event) => {
-    console.log("키 입력 감지됨");
+    const pressedKey = event.key;
+    console.log(`${pressedKey} 뗐음`);
     playSoundTwo();
   };
 
