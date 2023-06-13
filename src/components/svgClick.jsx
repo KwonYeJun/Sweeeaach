@@ -10,6 +10,9 @@ export default function KeyBoardSVG() {
       if (targetElement) {
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
+        // 자식들 찾다
+        console.log(targetElement.children[2]);
+       
       }
     }
 
@@ -24,7 +27,7 @@ export default function KeyBoardSVG() {
       }
     };
   }, [svgLoaded]);
-
+  
   const handleKeyDown = (event) => {
     const pressedKey = event.key;
     console.log(`${pressedKey} 누름`);
