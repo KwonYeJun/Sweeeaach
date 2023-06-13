@@ -8,11 +8,44 @@ export default function KeyBoardSVG() {
     if (svgLoaded) {
       const targetElement = document.getElementById("KeyBoard");
       if (targetElement) {
-        // ID에 해당하는 요소를 식별하고 필요한 작업 수행
-        console.log(targetElement);
+        document.addEventListener("keydown", handleKeyDown);
+        document.addEventListener("keyup", handleKeyUp);
       }
     }
+
+    // Clean up event listeners
+    return () => {
+      if (svgLoaded) {
+        const targetElement = document.getElementById("KeyBoard");
+        if (targetElement) {
+          document.removeEventListener("keydown", handleKeyDown);
+          document.removeEventListener("keyup", handleKeyUp);
+        }
+      }
+    };
   }, [svgLoaded]);
+
+  const handleKeyDown = (event) => {
+    console.log("키 입력 감지됨");
+    playSound();
+  };
+
+  const handleKeyUp = (event) => {
+    console.log("키 입력 감지됨");
+    playSoundTwo();
+  };
+
+  const playSound = () => {
+    const clickOnPush = new Audio("/audio/keysoundTest/clickonPush.m4a");
+    clickOnPush.play();
+    clickOnPush.volume = Math.random();
+  };
+
+  const playSoundTwo = () => {
+    const clickOnLeave = new Audio("/audio/keysoundTest/clickleavePush.m4a");
+    clickOnLeave.play();
+    clickOnLeave.volume = Math.random();
+  };
 
   return (
     <div className="KeyboardBox">
