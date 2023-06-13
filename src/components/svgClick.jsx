@@ -8,6 +8,7 @@ export default function KeyBoardSVG() {
     if (svgLoaded) {
       const targetElement = document.getElementById("KeyBoard");
       if (targetElement) {
+        console.log(targetElement)
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
       }
