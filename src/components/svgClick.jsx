@@ -3,16 +3,18 @@ import { ReactSVG } from "react-svg";
 
 export default function KeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
-
+const [test ,settest] = useState(false);
   useEffect(() => {
     if (svgLoaded) {
       const targetElement = document.getElementById("KeyBoard");
       if (targetElement) {
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
+        settest(targetElement)
         // 자식들 찾다
         console.log(targetElement.children[2]);
-       
+        
+        
       }
     }
 
@@ -27,10 +29,11 @@ export default function KeyBoardSVG() {
       }
     };
   }, [svgLoaded]);
-  
+
   const handleKeyDown = (event) => {
     const pressedKey = event.key;
     console.log(`${pressedKey} 누름`);
+    console.log(test)
     playSound();
   };
 
@@ -58,6 +61,7 @@ export default function KeyBoardSVG() {
         src="svg/KeyBoard.svg"
         afterInjection={() => setSvgLoaded(true)}
       />
+      
     </div>
   );
 }
