@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { PaperScope, Path } from 'paper';
+import React, { useEffect, useRef } from "react";
+import { PaperScope, Path, paper } from "paper";
 
 function PaperCanvas() {
   const canvasRef = useRef(null);
@@ -15,7 +15,7 @@ function PaperCanvas() {
     const path = new Path.Rectangle({
       point: [50, 50],
       size: [200, 100],
-      fillColor: 'red',
+      fillColor: "red",
     });
 
     // 경로 그리기
