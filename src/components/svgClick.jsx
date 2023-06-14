@@ -29,14 +29,21 @@ const [test ,settest] = useState(false);
       }
     };
   }, [svgLoaded]);
-
+  const handleSvgInjection = (event) => {
+    if (svgLoaded) {
+      const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+      const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
+      // rect 요소에 접근하여 원하는 작업 수행
+      console.log('test',rectElement);
+    }
+  };
   const handleKeyDown = (event) => {
     const pressedKey = event.key;
     console.log(`${pressedKey} 누름`);
+    handleSvgInjection(pressedKey)
     console.log(test)
     playSound();
   };
-
   const handleKeyUp = (event) => {
     const pressedKey = event.key;
     console.log(`${pressedKey} 뗐음`);
