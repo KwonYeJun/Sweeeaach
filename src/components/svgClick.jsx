@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { ReactSVG } from "react-svg";
 
 export default function KeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
-const [test ,settest] = useState(false);
+  const svgRef = useRef(null);
+
   useEffect(() => {
     if (svgLoaded) {
-      const targetElement = document.getElementById("KeyBoard");
+      const targetElement = svgRef.current;
       if (targetElement) {
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
-        settest(targetElement)
-        // 자식들 찾다
         console.log(targetElement.children[2]);
-        
-        
       }
     }
 
     // Clean up event listeners
     return () => {
       if (svgLoaded) {
-        const targetElement = document.getElementById("KeyBoard");
+        const targetElement = svgRef.current;
         if (targetElement) {
           document.removeEventListener("keydown", handleKeyDown);
           document.removeEventListener("keyup", handleKeyUp);
@@ -30,38 +27,15 @@ const [test ,settest] = useState(false);
     };
   }, [svgLoaded]);
 
-  const handleKeyDown = (event) => {
-    const pressedKey = event.key;
-    console.log(`${pressedKey} 누름`);
-    console.log(test)
-    playSound();
-  };
-
-  const handleKeyUp = (event) => {
-    const pressedKey = event.key;
-    console.log(`${pressedKey} 뗐음`);
-    playSoundTwo();
-  };
-
-  const playSound = () => {
-    const clickOnPush = new Audio("/audio/keysoundTest/clickonPush.m4a");
-    clickOnPush.play();
-    clickOnPush.volume = Math.random();
-  };
-
-  const playSoundTwo = () => {
-    const clickOnLeave = new Audio("/audio/keysoundTest/clickleavePush.m4a");
-    clickOnLeave.play();
-    clickOnLeave.volume = Math.random();
-  };
+  // Rest of your component code...
 
   return (
     <div className="KeyboardBox">
       <ReactSVG
+        ref={svgRef}
         src="svg/KeyBoard.svg"
         afterInjection={() => setSvgLoaded(true)}
       />
-      
     </div>
   );
 }
