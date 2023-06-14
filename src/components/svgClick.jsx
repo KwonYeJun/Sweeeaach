@@ -34,7 +34,7 @@ const [test ,settest] = useState(false);
       const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
       const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
       // rect 요소에 접근하여 원하는 작업 수행
-      console.log('test',rectElement);
+      console.log('자식 찾기',rectElement);
     }
   };
   const handleKeyDown = (event) => {
