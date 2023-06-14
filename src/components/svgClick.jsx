@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 
 export default function KeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
-
+  const [test, settest] = useState(false);
   useEffect(() => {
     if (svgLoaded) {
       const targetElement = document.getElementById("KeyBoard");
@@ -11,24 +11,47 @@ export default function KeyBoardSVG() {
         console.log(targetElement)
         document.addEventListener("keydown", handleKeyDown);
         document.addEventListener("keyup", handleKeyUp);
+
+        let keyboardsKeys = [];
+        const children = targetElement.children[2].children;
+        for (let i = 0; i < children.length; i++) {
+          let keys = children[i];
+          keyboardsKeys.push(keys);
+          keys.addEventListener("click", console.log("클릭됨"));
+        }
+        console.log(keyboardsKeys);
       }
     }
 
-    // Clean up event listeners
     return () => {
       if (svgLoaded) {
         const targetElement = document.getElementById("KeyBoard");
         if (targetElement) {
           document.removeEventListener("keydown", handleKeyDown);
           document.removeEventListener("keyup", handleKeyUp);
+
+          // 자식 요소의 이벤트 핸들러 제거
+          const children = targetElement.children;
+          for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            child.removeEventListener("click", handleChildClick);
+          }
         }
       }
     };
   }, [svgLoaded]);
 
+  const handleChildClick = (event) => {
+    // 자식 요소 클릭 시 실행되는 작업
+    const clickedChild = event.target;
+    console.log("자식 요소 클릭:", clickedChild);
+    // 특정 작업 수행
+  };
+
   const handleKeyDown = (event) => {
     const pressedKey = event.key;
     console.log(`${pressedKey} 누름`);
+    console.log(test);
     playSound();
   };
 
