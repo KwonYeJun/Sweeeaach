@@ -13,16 +13,18 @@ module.exports = {
       {
         test: [/\.js$/, /\.jsx$/],
         use: ["babel-loader"],
-        
       },
       {
         test: [/\.m4a$/],
         use: ["file-loader"],
-        
+      },
+      {
+        test: [/\.css$/],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".jsx", ".js"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".png"],
   },
 };
