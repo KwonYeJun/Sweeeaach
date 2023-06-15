@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 
 export default function KeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
-const [test ,settest] = useState(false);
+  const [test, settest] = useState(false);
   useEffect(() => {
     if (svgLoaded) {
       const targetElement = document.getElementById("KeyBoard");
@@ -13,8 +13,8 @@ const [test ,settest] = useState(false);
         settest(targetElement)
         // 자식들 찾다
         console.log(targetElement.children[2]);
-        
-        
+
+
       }
     }
 
@@ -31,10 +31,31 @@ const [test ,settest] = useState(false);
   }, [svgLoaded]);
   const handleSvgInjection = (event) => {
     if (svgLoaded) {
-      const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
-      const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
-      // rect 요소에 접근하여 원하는 작업 수행
-      console.log('자식 찾기',rectElement);
+      if (/^[0-9]$/.test(event)) {
+        const number = parseInt(event);
+        const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+        const rectElement = svgElement.querySelector(`#_${number}`); // <rect> 요소 식별
+        // rect 요소에 접근하여 원하는 작업 수행
+        console.log('숫자',rectElement);
+      } 
+      else if ((/^[+=]$/.test(event))){
+        const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+        const rectElement = svgElement.querySelector(`#Num${event}`); // <rect> 요소 식별
+        // rect 요소에 접근하여 원하는 작업 수행
+        console.log('특문', rectElement);
+      }
+      else {
+        const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+        const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
+        // rect 요소에 접근하여 원하는 작업 수행
+        console.log('test', rectElement);
+      }
+
+
+      // const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+      // const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
+      // // rect 요소에 접근하여 원하는 작업 수행
+      // console.log('test',rectElement);
     }
   };
   const handleKeyDown = (event) => {
@@ -68,7 +89,7 @@ const [test ,settest] = useState(false);
         src="svg/KeyBoard.svg"
         afterInjection={() => setSvgLoaded(true)}
       />
-      
+
     </div>
   );
 }
