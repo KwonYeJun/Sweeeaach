@@ -38,12 +38,18 @@ export default function KeyBoardSVG() {
   const handleSvgInjection = (event) => {
     if (svgLoaded) {
       if (/^[0-9]$/.test(event)) {
-        const number = parseInt(event);
+        const _ber = parseInt(event);
         const svgElement = document.querySelector("svg"); // SVG 컨테이너 요소 선택
-        const rectElement = svgElement.querySelector(`#_${number}`); // <rect> 요소 식별
+        const rectElement = svgElement.querySelector(`#_${_ber}`); // <rect> 요소 식별
         // rect 요소에 접근하여 원하는 작업 수행
         rectElement.style.fill = "#d90429";
         console.log('숫자', rectElement);
+      }
+      else if(event === 'Shift'){
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#RShift`);
+        console.log('shift', rectElement);
+        rectElement.style.fill = "#d90429";
       }
       else if (/^[ㄱ-ㅎ]+/.test(event)) {
         const svgElement = document.querySelector('svg');
@@ -254,9 +260,70 @@ export default function KeyBoardSVG() {
         rectElement.style.fill = "#d90429";
         console.log('대문자', rectElement);
       }
+      else  if (event === ']') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`[data-name="]"]`);
+        rectElement.style.fill = "#d90429";
+        console.log(']', rectElement);
+      } 
       else  if (event === '!') {
         const svgElement = document.querySelector('svg');
-        const rectElement = svgElement.querySelector(`#Num1`);
+        const rectElement = svgElement.querySelector(`#_1`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '@') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_2`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '#') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_3`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '$') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_4`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '%') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_5`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '^') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_6`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '&') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_7`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '*') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_8`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '(') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_9`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === ')') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_0`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '_') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_-`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } else if (event === '+') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_`);
         rectElement.style.fill = "#d90429";
         console.log('특수문자', rectElement);
       }
@@ -292,8 +359,320 @@ export default function KeyBoardSVG() {
     const pressedKey = event.key;
     console.log(`${pressedKey} 뗐음`);
     // rect 요소의 style 속성을 제거합니다.
-    // const rectElement = document.querySelector(`#${pressedKey}`);
-    // rectElement.style.fill = null;
+
+    if (/^[0-9]$/.test(pressedKey)) {
+      const _ber = parseInt(pressedKey);
+      const svgElement = document.querySelector("svg"); // SVG 컨테이너 요소 선택
+      const rectElement = svgElement.querySelector(`#_${_ber}`); // <rect> 요소 식별
+      // rect 요소에 접근하여 원하는 작업 수행
+      rectElement.style.fill = null;
+      console.log('숫자', rectElement);
+    }
+    else if (/^[ㄱ-ㅎ]+/.test(pressedKey)) {
+      const svgElement = document.querySelector('svg');
+      // 자음 변환 로직
+      if (pressedKey === 'ㄱ') {
+        convertedKey = 'r';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㄴ') 
+      {
+        convertedKey = 's';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㄷ') 
+      {
+        convertedKey = 'e';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㄹ') 
+      {
+        convertedKey = 'f';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅁ') 
+      {
+        convertedKey = 'a';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅂ') 
+      {
+        convertedKey = 'q';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅅ') 
+      {
+        convertedKey = 't';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅇ') 
+      {
+        convertedKey = 'd';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅈ') 
+      {
+        convertedKey = 'w';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅊ') 
+      {
+        convertedKey = 'c';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅋ') 
+      {
+        convertedKey = 'z';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅌ') 
+      {
+        convertedKey = 'x';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅍ') 
+      {
+        convertedKey = 'v';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅎ') 
+      {
+        convertedKey = 'g';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㄲ') 
+      {
+        convertedKey = 'rr';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㄸ') 
+      {
+        convertedKey = 'ss';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅃ') 
+      {
+        convertedKey = 'qq';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅆ') 
+      {
+        convertedKey = 'tt';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅉ') 
+      {
+        convertedKey = 'ww';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅏ') 
+      {
+        convertedKey = 'k';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅑ') 
+      {
+        convertedKey = 'i';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅓ') 
+      {
+        convertedKey = 'j';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅕ') 
+      {
+        convertedKey = 'u';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅗ') 
+      {
+        convertedKey = 'h';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅛ') 
+      {
+        convertedKey = 'y';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅜ') 
+      {
+        convertedKey = 'n';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅠ') 
+      {
+        convertedKey = 'b';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅡ') 
+      {
+        convertedKey = 'm';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅣ') 
+      {
+        convertedKey = ',';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅐ') 
+      {
+        convertedKey = 'o';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅒ') 
+      {
+        convertedKey = 'l';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅔ') 
+      {
+        convertedKey = 'p';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      } else if (pressedKey === 'ㅖ') 
+      {
+        convertedKey = ';';
+        const rectElement = svgElement.querySelector(`#${convertedKey}`);
+        rectElement.style.fill = null;
+        console.log('한글', rectElement);
+      }
+    }
+    else if (/^[A-Z]$/.test(pressedKey)) {
+      const lowercasepressedKey = pressedKey.toLowerCase(); // 대문자를 소문자로 변환
+      const svgElement = document.querySelector("svg");
+      const rectElement = svgElement.querySelector(`#${lowercasepressedKey}`);
+      rectElement.style.fill = null;
+      console.log('대문자', rectElement);
+    }
+    else  if (pressedKey === '!') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_1`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '@') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_2`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '#') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_3`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '$') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_4`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '%') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_5`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '^') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_6`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '&') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_7`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '*') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_8`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '(') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_9`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === ')') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_0`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '_') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_-`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } else if (pressedKey === '+') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    }
+    
+    else if(pressedKey === 'HangulMode'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#R_Alt`);
+      rectElement.style.fill = null;
+      console.log('오른쪽 Alt', rectElement);
+    }
+    else if(pressedKey === '-'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_-`);
+      console.log('-', rectElement);
+      rectElement.style.fill = null;
+    }
+    else if(pressedKey === 'Shift'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#RShift`);
+      console.log('-', rectElement);
+      rectElement.style.fill = null;
+    }
+    else  if (pressedKey === ']') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`[data-name="]"]`);
+      rectElement.style.fill = null;
+      console.log(']', rectElement);
+    } 
+    else {
+      const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+      const rectElement = svgElement.querySelector(`#${pressedKey}`); // <rect> 요소 식별
+      rectElement.style.fill = null;
+      // rect 요소에 접근하여 원하는 작업 수행
+      console.log("test", rectElement);
+    }
+
+
+
     playSoundTwo();
   };
 
