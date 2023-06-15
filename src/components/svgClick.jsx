@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
+import "../css/keyboard.css";
 
 export default function KeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
@@ -59,7 +60,7 @@ export default function KeyBoardSVG() {
       } else {
         const svgElement = document.querySelector("svg"); // SVG 컨테이너 요소 선택
         const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
-        rectElement.style.fill = "white";
+        rectElement.style.fill = "#d90429";
         // rect 요소에 접근하여 원하는 작업 수행
         console.log("test", rectElement);
       }
