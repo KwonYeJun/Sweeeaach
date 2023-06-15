@@ -44,6 +44,12 @@ export default function KeyBoardSVG() {
         // rect 요소에 접근하여 원하는 작업 수행
         console.log('특문', rectElement);
       }
+      else if ((/^[A-Z]$/.test(event))){
+        const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
+        const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
+        // rect 요소에 접근하여 원하는 작업 수행
+        console.log('대문자', rectElement);
+      }
       else {
         const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
         const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
