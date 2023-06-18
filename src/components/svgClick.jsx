@@ -339,6 +339,12 @@ export default function KeyBoardSVG() {
         console.log('-', rectElement);
         rectElement.style.fill = "#d90429";
       }
+      else if(event === ';'){
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_3-2`);
+        console.log(';', rectElement);
+        rectElement.style.fill = "#d90429";
+      }
       else {
         const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
         const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
@@ -637,6 +643,12 @@ export default function KeyBoardSVG() {
       const rectElement = svgElement.querySelector(`#_`);
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
+    }
+    else if(pressedKey === ';'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_3-2`);
+      console.log(';', rectElement);
+      rectElement.style.fill = null;
     }
     
     else if(pressedKey === 'HangulMode'){
