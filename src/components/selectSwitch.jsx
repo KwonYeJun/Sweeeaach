@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/react";
 export default function () {
   return (
     <Box
-    className="selectSwitch"
+      className="selectSwitch"
       width="100%"
       height="20vh"
       mx="auto"
@@ -15,9 +15,15 @@ export default function () {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <div className="click">클릭</div>
-      <div className="tactile">택타일</div>
-      <div className="linear">리니어</div>
+      <Box className="switchBoxArea">
+        <Box className="click"></Box>
+      </Box>
+      <Box className="switchBoxArea">
+        <Box className="tactile"></Box>
+      </Box>
+      <Box className="switchBoxArea">
+        <Box className="linear"></Box>
+      </Box>
     </Box>
   );
 }
