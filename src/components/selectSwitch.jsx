@@ -17,14 +17,41 @@ export default function () {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box className="switchBoxArea" width={"15%"} height={"100%"}>
-        <Box className="click"></Box>
+      <Box
+        className="switchBoxArea"
+        width={"15%"}
+        height={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box className="click">
+          <Image src="/img/click.png"></Image>
+        </Box>
       </Box>
-      <Box className="switchBoxArea" width={"15%"} height={"100%"}>
-        <Box className="tactile"></Box>
+      <Box
+        className="switchBoxArea"
+        width={"15%"}
+        height={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box className="tactile">
+          <Image src="/img/tactile.png"></Image>
+        </Box>
       </Box>
-      <Box className="switchBoxArea" width={"15%"} height={"100%"}>
-        <Box className="linear"></Box>
+      <Box
+        className="switchBoxArea"
+        width={"15%"}
+        height={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box className="linear">
+          <Image src="/img/linear.png"></Image>
+        </Box>
       </Box>
     </Box>
   );
