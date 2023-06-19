@@ -260,11 +260,17 @@ export default function KeyBoardSVG() {
         rectElement.style.fill = "#d90429";
         console.log('대문자', rectElement);
       }
-      else  if (event === ']') {
+      else  if (event === ']' || event === '}') {
         const svgElement = document.querySelector('svg');
         const rectElement = svgElement.querySelector(`[data-name="]"]`);
         rectElement.style.fill = "#d90429";
         console.log(']', rectElement);
+      } 
+      else  if (event === '[' || event === '{') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_2-2`);
+        rectElement.style.fill = "#d90429";
+        console.log('[', rectElement);
       } 
       else  if (event === '!') {
         const svgElement = document.querySelector('svg');
@@ -321,7 +327,7 @@ export default function KeyBoardSVG() {
         const rectElement = svgElement.querySelector(`#_-`);
         rectElement.style.fill = "#d90429";
         console.log('특수문자', rectElement);
-      } else if (event === '+') {
+      } else if (event === '+' || event === '=') {
         const svgElement = document.querySelector('svg');
         const rectElement = svgElement.querySelector(`#_`);
         rectElement.style.fill = "#d90429";
@@ -339,11 +345,29 @@ export default function KeyBoardSVG() {
         console.log('-', rectElement);
         rectElement.style.fill = "#d90429";
       }
-      else if(event === ';'){
+      else if(event === ';' || event === ':'){
         const svgElement = document.querySelector('svg');
         const rectElement = svgElement.querySelector(`#_3-2`);
         console.log(';', rectElement);
         rectElement.style.fill = "#d90429";
+      }
+      else if(event === ',' || event === '<'){
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_4-2`);
+        console.log(',', rectElement);
+        rectElement.style.fill = "#d90429";
+      }
+      else if(event === '.' || event === '>'){
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`[data-name="."]`);
+        console.log('.', rectElement);
+        rectElement.style.fill = "#d90429";
+      }
+      else if(event === '?' || event === '/'){
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#_5-2`);
+        console.log('/', rectElement);
+      rectElement.style.fill = "#d90429";
       }
       else {
         const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
@@ -638,13 +662,19 @@ export default function KeyBoardSVG() {
       const rectElement = svgElement.querySelector(`#_-`);
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
-    } else if (pressedKey === '+') {
+    } else if (pressedKey === '+' || pressedKey === '=') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#_`);
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
     }
-    else if(pressedKey === ';'){
+    else  if (pressedKey === '[' || pressedKey === '{') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_2-2`);
+      rectElement.style.fill =  null;
+      console.log('[', rectElement);
+    } 
+    else if(pressedKey === ';' || pressedKey === ':'){
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#_3-2`);
       console.log(';', rectElement);
@@ -669,12 +699,30 @@ export default function KeyBoardSVG() {
       console.log('-', rectElement);
       rectElement.style.fill = null;
     }
-    else  if (pressedKey === ']') {
+    else  if (pressedKey === ']' || pressedKey === '}') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`[data-name="]"]`);
       rectElement.style.fill = null;
       console.log(']', rectElement);
     } 
+    else if(pressedKey === ',' || pressedKey === '<'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_4-2`);
+      console.log(',', rectElement);
+      rectElement.style.fill = null;
+    }
+    else if(pressedKey === '.' || pressedKey === '>'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`[data-name="."]`);
+      console.log('.', rectElement);
+      rectElement.style.fill = null;
+    }
+    else if(pressedKey === '?' || pressedKey === '/'){
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_5-2`);
+      console.log(',', rectElement);
+      rectElement.style.fill = null;
+    }
     else {
       const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
       const rectElement = svgElement.querySelector(`#${pressedKey}`); // <rect> 요소 식별
