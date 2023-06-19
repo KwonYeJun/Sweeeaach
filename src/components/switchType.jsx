@@ -6,7 +6,7 @@ import ClickSwitch from "./clickSwitch";
 import TactileSwitch from "./tacitleSwitch";
 import LinearSwitch from "./linearSwitch";
 
-import "@fontsource/koulen"
+import "@fontsource/Koulen";
 
 export default function () {
   return (
@@ -26,7 +26,14 @@ export default function () {
           gap={"10px"}
         >
           <ClickSwitch></ClickSwitch>
-          <Text fontFamily={"Koulen"}>CLICK</Text>
+          <Text
+            fontFamily={"Pretendard"}
+            fontSize={35}
+            fontWeight={900}
+            color={"#00A6FB"}
+          >
+            CLICK
+          </Text>
         </Box>
       </Box>
       <Box
@@ -44,7 +51,14 @@ export default function () {
           gap={"10px"}
         >
           <TactileSwitch></TactileSwitch>
-          <Text>TACTILE</Text>
+          <Text
+            fontFamily={"Pretendard"}
+            fontSize={35}
+            fontWeight={900}
+            color={"#5E503F"}
+          >
+            TACTILE
+          </Text>
         </Box>
       </Box>
       <Box
@@ -62,7 +76,14 @@ export default function () {
           gap={"10px"}
         >
           <LinearSwitch></LinearSwitch>
-          <Text>LINEAR</Text>
+          <Text
+            fontFamily={"Pretendard"}
+            fontSize={35}
+            fontWeight={900}
+            color={"#DB3A34"}
+          >
+            LINEAR
+          </Text>
         </Box>
       </Box>
     </>
