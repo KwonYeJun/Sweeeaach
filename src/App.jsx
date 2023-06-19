@@ -9,13 +9,15 @@ export default function App() {
   return (
     <>
       <Box
+        display={"flex"}
         width="100%"
         height="100vh"
         className="container"
-        display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
         textAlign={"center"}
+        backgroundColor={"#D9D9D9"}
+        mx={"auto"}
       >
         <Title />
         <SelectSwitch />
