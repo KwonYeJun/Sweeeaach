@@ -9,7 +9,7 @@ export default function () {
   return (
     <>
       <Box className="click">
-        <img src="/img/click.png"></img>
+        <Image src="img/click.png" alt="clickSwitch"></Image>
       </Box>
     </>
   );

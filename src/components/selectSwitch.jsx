@@ -4,7 +4,7 @@ import React from "react";
 // 리액트 컴포넌트
 import Click from "./click";
 import SVGclick from "./svgClick";
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 export default function () {
   return (
