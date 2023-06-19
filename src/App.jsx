@@ -27,6 +27,10 @@ export default function App() {
         <SelectSwitch />
         <HelpText />
         <IconButton
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          width={"100%"}
           icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           onClick={toggleColorMode}
           aria-label="Toggle color mode"
