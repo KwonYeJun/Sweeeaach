@@ -5,6 +5,7 @@ import React from "react";
 import Click from "./click";
 import SVGclick from "./svgClick";
 import { Box, Image } from "@chakra-ui/react";
+import SwitchType from "./switchType";
 
 export default function () {
   return (
@@ -17,42 +18,7 @@ export default function () {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box
-        className="switchBoxArea"
-        width={"15%"}
-        height={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box className="click">
-          <Image src="/img/click.png"></Image>
-        </Box>
-      </Box>
-      <Box
-        className="switchBoxArea"
-        width={"15%"}
-        height={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box className="tactile">
-          <Image src="/img/tactile.png"></Image>
-        </Box>
-      </Box>
-      <Box
-        className="switchBoxArea"
-        width={"15%"}
-        height={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box className="linear">
-          <Image src="/img/linear.png"></Image>
-        </Box>
-      </Box>
+      <SwitchType />
     </Box>
   );
 }
