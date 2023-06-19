@@ -16,7 +16,7 @@ export default function helpText() {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Text fontSize={24}>스위치를 클릭하여 테스트 해보세요.</Text>
+      <Text fontSize={24} fontFamily={"Pretendard"}>스위치를 클릭하여 테스트 해보세요.</Text>
     </Box>
   );
 }
