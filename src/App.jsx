@@ -1,11 +1,15 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useColorMode, IconButton } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import Title from "./components/title";
 import HelpText from "./components/helpText";
 import SelectSwitch from "./components/selectSwitch";
 // import "./css/root.css";
 
 export default function App() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const backgroundColor = colorMode === "dark" ? "gray.800" : "gray.200";
   return (
     <>
       <Box
@@ -16,12 +20,18 @@ export default function App() {
         flexDirection={"column"}
         justifyContent={"center"}
         textAlign={"center"}
-        backgroundColor={"#D9D9D9"}
+        backgroundColor={backgroundColor}
         mx={"auto"}
       >
         <Title />
         <SelectSwitch />
         <HelpText />
+        <IconButton
+          icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          onClick={toggleColorMode}
+          aria-label="Toggle color mode"
+          variant="ghost"
+        />
       </Box>
     </>
   );
