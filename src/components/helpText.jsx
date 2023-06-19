@@ -4,6 +4,7 @@ import { Box } from "@chakra-ui/react";
 export default function helpText() {
   return (
     <Box
+      className="helpText"
       width="100%"
       height="5vh"
       mx="auto"

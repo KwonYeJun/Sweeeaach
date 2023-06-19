@@ -7,6 +7,7 @@ import { Box } from "@chakra-ui/react";
 export default function () {
   return (
     <Box
+    className="selectSwitch"
       width="100%"
       height="20vh"
       mx="auto"

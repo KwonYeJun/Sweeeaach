@@ -1,10 +1,18 @@
+// 리액트 라이브러리
 import React from "react";
+
+// 리액트 컴포넌트
 import { Box } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
+
+// 폰트
+
+import "@fontsource/jura";
+
 export default function title() {
   return (
     <Box
-    className="titleText"
+      className="titleText"
       w="100%"
       h="5vh"
       mx="auto"
@@ -12,7 +20,7 @@ export default function title() {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Text fontSize="md">fortunate simian</Text>
+      <Text fontSize="32">fortunate simian</Text>
     </Box>
   );
 }
