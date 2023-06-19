@@ -5,11 +5,9 @@ import HelpText from "./components/helpText";
 
 export default function App() {
   return (
-    <div className="container">
-      <Box>
-        <Title />
-        <HelpText />
-      </Box>
-    </div>
+    <Box w={"100%"} h={"100%"} mx={"auto"} className="container">
+      <Title />
+      <HelpText />
+    </Box>
   );
 }
