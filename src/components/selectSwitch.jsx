@@ -11,7 +11,7 @@ export default function () {
   return (
     <Box
       className="selectSwitch"
-      width="100%"
+      width="75%"
       height="25vh"
       mx="auto"
       display={"flex"}

@@ -1,7 +1,12 @@
 // 리액트 라이브러리
 import React from "react";
 
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
+import ClickSwitch from "./clickSwitch";
+import TactileSwitch from "./tacitleSwitch";
+import LinearSwitch from "./linearSwitch";
+
+import "@fontsource/koulen"
 
 export default function () {
   return (
@@ -14,8 +19,14 @@ export default function () {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Box className="click">
-          <Image src="/img/click.png"></Image>
+        <Box
+          className="clickBox"
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"10px"}
+        >
+          <ClickSwitch></ClickSwitch>
+          <Text fontFamily={"Koulen"}>CLICK</Text>
         </Box>
       </Box>
       <Box
@@ -26,8 +37,14 @@ export default function () {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Box className="tactile">
-          <Image src="/img/tactile.png"></Image>
+        <Box
+          className="tactileBox"
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"10px"}
+        >
+          <TactileSwitch></TactileSwitch>
+          <Text>TACTILE</Text>
         </Box>
       </Box>
       <Box
@@ -38,8 +55,14 @@ export default function () {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Box className="linear">
-          <Image src="/img/linear.png"></Image>
+        <Box
+          className="linearBox"
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"10px"}
+        >
+          <LinearSwitch></LinearSwitch>
+          <Text>LINEAR</Text>
         </Box>
       </Box>
     </>
