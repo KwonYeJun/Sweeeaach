@@ -6,7 +6,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 export default function () {
   return (
     <>
-      <Box className="tactile" display={"flex"}>
+      <Box className="tactile">
         <Image src="/img/tactile.png"></Image>
       </Box>
     </>
