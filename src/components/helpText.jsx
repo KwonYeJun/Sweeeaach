@@ -1,5 +1,9 @@
+// 리액트 라이브러리
 import React from "react";
+
+// 리액트 컴포넌트
 import { Box } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 export default function helpText() {
   return (
@@ -12,7 +16,7 @@ export default function helpText() {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <h3>스위치를 클릭하여 테스트 해보세요.</h3>
+      <Text fontSize={24}>스위치를 클릭하여 테스트 해보세요.</Text>
     </Box>
   );
 }

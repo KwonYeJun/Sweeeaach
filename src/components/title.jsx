@@ -20,7 +20,9 @@ export default function title() {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Text fontSize="32">fortunate simian</Text>
+      <Text fontSize="64" fontFamily={"jura"}>
+        fortunate simian
+      </Text>
     </Box>
   );
 }
