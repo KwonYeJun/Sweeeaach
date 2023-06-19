@@ -2,12 +2,25 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import Title from "./components/title";
 import HelpText from "./components/helpText";
+import SelectSwitch from "./components/selectSwitch";
+// import "./css/root.css";
 
 export default function App() {
   return (
-    <Box w="100%" h="100%" mx="auto" className="container">
-      <Title />
-      <HelpText />
-    </Box>
+    <>
+      <Box
+        width="100%"
+        height="100vh"
+        className="container"
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        textAlign={"center"}
+      >
+        <Title />
+        <SelectSwitch />
+        <HelpText />
+      </Box>
+    </>
   );
 }
