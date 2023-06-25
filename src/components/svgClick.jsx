@@ -35,7 +35,7 @@ export default function KeyBoardSVG() {
       }
     };
   }, [svgLoaded]);
-  const handleSvgInjection = (event) => {
+  const handleSvgInjection = (event,code) => {
     if (svgLoaded) {
       if (/^[0-9]$/.test(event)) {
         const _ber = parseInt(event);
@@ -45,6 +45,18 @@ export default function KeyBoardSVG() {
         rectElement.style.fill = "#d90429";
         console.log('숫자', rectElement);
       }
+      else if (code === 'ShiftLeft') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#LShift`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } 
+      else if (code === 'ShiftRight') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#RShift`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } 
       else if (/^[ㄱ-ㅎ]+/.test(event)) {
         const svgElement = document.querySelector('svg');
         // 자음 변환 로직
@@ -352,24 +364,12 @@ export default function KeyBoardSVG() {
       }
     }
   };
+
   const handleKeyDown = (event) => {
     event.preventDefault();
     const pressedKey = event.key;
-    if (event.key === 'Shift') {
-      if (event.location === 1) {
-        console.log('왼쪽 Shift 키가 눌렸습니다.');
-        const svgElement = document.querySelector('svg');
-        const rectElement = svgElement.querySelector(`#LShift`);
-        rectElement.style.fill = "#d90429";
-      } else if (event.location === 2) {
-        const svgElement = document.querySelector('svg');
-        const rectElement = svgElement.querySelector(`#RShift`);
-        console.log('오른쪽 Shift 키가 눌렸습니다.');
-        rectElement.style.fill = "#d90429";
-      }
-    }
-    console.log(`${pressedKey} 누름`);
-    handleSvgInjection(pressedKey);
+    console.log(event.code,' 이거');
+    handleSvgInjection(pressedKey,event.code);
     console.log(test);
     playSound();
   };
@@ -387,19 +387,18 @@ export default function KeyBoardSVG() {
       rectElement.style.fill = null;
       console.log('숫자', rectElement);
     }
-  else  if (pressedKey === 'Shift') {
-      if (pressedKey.location === 1) {
-        console.log('왼쪽 Shift 키가 눌렸습니다.');
-        const svgElement = document.querySelector('svg');
-        const rectElement = svgElement.querySelector(`#LShift`);
-        rectElement.style.fill = null;
-      } else if (pressedKey.location === 2) {
-        const svgElement = document.querySelector('svg');
-        const rectElement = svgElement.querySelector(`#RShift`);
-        console.log('오른쪽 Shift 키가 눌렸습니다.');
-        rectElement.style.fill = null;
-      }
-    }
+    else if (event.code === 'ShiftLeft') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#LShift`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } 
+    else if (event.code === 'ShiftRight') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#RShift`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } 
     else if (/^[ㄱ-ㅎ]+/.test(pressedKey)) {
       const svgElement = document.querySelector('svg');
       // 자음 변환 로직
