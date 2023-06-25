@@ -57,6 +57,18 @@ export default function KeyBoardSVG() {
         rectElement.style.fill = "#d90429";
         console.log('특수문자', rectElement);
       } 
+      else if (code === 'ControlLeft') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#L_Ctrl`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } 
+      else if (code === 'ControlRight') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#R_Ctrl`);
+        rectElement.style.fill = "#d90429";
+        console.log('특수문자', rectElement);
+      } 
       else if (/^[ㄱ-ㅎ]+/.test(event)) {
         const svgElement = document.querySelector('svg');
         // 자음 변환 로직
@@ -355,6 +367,30 @@ export default function KeyBoardSVG() {
         console.log('/', rectElement);
         rectElement.style.fill = "#d90429";
       }
+      else if (code === 'MetaLeft') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#L_Win_Cmd`);
+        rectElement.style.fill = "#d90429";
+        console.log('L_Win_Cmd', rectElement);
+      } 
+      else if (code === 'Space') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#SpaceBar`);
+        rectElement.style.fill = "#d90429";
+        console.log('SpaceBar', rectElement);
+      } 
+      else if (code === 'Backquote') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#___`);
+        rectElement.style.fill = "#d90429";
+        console.log('`', rectElement);
+      } 
+      else if (code === 'AltLeft') {
+        const svgElement = document.querySelector('svg');
+        const rectElement = svgElement.querySelector(`#L_Alt`);
+        rectElement.style.fill = "#d90429";
+        console.log('L_Alt', rectElement);
+      } 
       else {
         const svgElement = document.querySelector('svg'); // SVG 컨테이너 요소 선택
         const rectElement = svgElement.querySelector(`#${event}`); // <rect> 요소 식별
@@ -370,7 +406,7 @@ export default function KeyBoardSVG() {
     const pressedKey = event.key;
     console.log(event.code,' 이거');
     handleSvgInjection(pressedKey,event.code);
-    console.log(test);
+    console.log(pressedKey);
     playSound();
   };
   const handleKeyUp = (event) => {
@@ -387,6 +423,12 @@ export default function KeyBoardSVG() {
       rectElement.style.fill = null;
       console.log('숫자', rectElement);
     }
+    else if (event.code === 'Space') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#SpaceBar`);
+      rectElement.style.fill = null;
+      console.log('SpaceBar', rectElement);
+    } 
     else if (event.code === 'ShiftLeft') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#LShift`);
@@ -398,6 +440,35 @@ export default function KeyBoardSVG() {
       const rectElement = svgElement.querySelector(`#RShift`);
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
+    } 
+    else if (event.code === 'ControlLeft') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#L_Ctrl`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } 
+    else if (event.code === 'ControlRight') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#R_Ctrl`);
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    } 
+    else if (event.code === 'AltLeft') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#L_Alt`);
+      rectElement.style.fill = null;
+      console.log('L_Alt', rectElement);
+    } 
+    else if (event.code === 'MetaLeft') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#L_Win_Cmd`);
+      rectElement.style.fill = null;
+      console.log('L_Win_Cmd', rectElement);
+    }  else if (event.code=== 'Backquote') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#___`);
+      rectElement.style.fill = null;
+      console.log('`', rectElement);
     } 
     else if (/^[ㄱ-ㅎ]+/.test(pressedKey)) {
       const svgElement = document.querySelector('svg');
