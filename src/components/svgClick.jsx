@@ -313,7 +313,7 @@ export default function KeyBoardSVG() {
         const rectElement = svgElement.querySelector(`#_-`);
         rectElement.style.fill = "#d90429";
         console.log('특수문자', rectElement);
-      } else if (event === '+' || event === '=') {
+      } else if (event === '+' || event === '=' && code !=='NumpadAdd') {
         const svgElement = document.querySelector('svg');
         const rectElement = svgElement.querySelector(`#_`);
         rectElement.style.fill = "#d90429";
@@ -894,7 +894,7 @@ export default function KeyBoardSVG() {
       const rectElement = svgElement.querySelector(`#_-`);
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
-    } else if (pressedKey === '+' || pressedKey === '=') {
+    } else if (pressedKey === '+' || pressedKey === '=' && event.code !=='NumpadAdd') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#_`);
       rectElement.style.fill = null;
