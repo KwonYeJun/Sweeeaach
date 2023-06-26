@@ -2,6 +2,9 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Box, useColorMode, IconButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+
+import MainScreen from "./components/mainScreen";
+
 import Title from "./components/title";
 import HelpText from "./components/helpText";
 import SelectSwitch from "./components/selectSwitch";
@@ -16,33 +19,10 @@ export default function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<MainScreen />}></Route>
         <Route path="/clickSwitch" element={<ClickSwitchSVG />}></Route>
       </Routes>
-      <Box
-        display={"flex"}
-        width="100%"
-        height="100vh"
-        className="container"
-        flexDirection={"column"}
-        justifyContent={"center"}
-        textAlign={"center"}
-        backgroundColor={backgroundColor}
-        mx={"auto"}
-      >
-        <Title />
-        <SelectSwitch />
-        <HelpText />
-        <IconButton
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          width={"100%"}
-          icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          onClick={toggleColorMode}
-          aria-label="Toggle color mode"
-          variant="ghost"
-        />
-      </Box>
+      <MainScreen />
     </>
   );
 }
