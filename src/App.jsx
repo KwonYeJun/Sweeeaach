@@ -4,6 +4,7 @@ import { useColorMode, IconButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import MainScreen from "./components/mainScreen";
 import ClickSwitchSVG from "./components/clickSwitchSVG";
+import LinearSwitchSVG from "./components/linearSwitchSVG";
 
 export default function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -15,6 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<MainScreen />} />
         <Route path="/clickSwitch" element={<ClickSwitchSVG />} />
+        <Route path="/linearSwitch" element={<LinearSwitchSVG />} />
       </Routes>
     </>
   );

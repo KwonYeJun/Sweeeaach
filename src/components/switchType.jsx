@@ -78,7 +78,9 @@ export default function () {
           flexDirection={"column"}
           gap={"10px"}
         >
-          <LinearSwitch></LinearSwitch>
+          <Link to={"/linearSwitch"}>
+            <LinearSwitch></LinearSwitch>
+          </Link>
           <Text
             fontFamily={"Pretendard"}
             fontSize={35}
