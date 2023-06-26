@@ -912,13 +912,13 @@ export default function KeyBoardSVG() {
   };
 
   const playSound = () => {
-    const clickOnPush = new Audio("/audio/keysoundTest/clickonPush.m4a");
+    const clickOnPush = new Audio("/audio/keysoundTest/linearOnPush.m4a");
     clickOnPush.play();
     clickOnPush.volume = Math.random();
   };
 
   const playSoundTwo = () => {
-    const clickOnLeave = new Audio("/audio/keysoundTest/clickleavePush.m4a");
+    const clickOnLeave = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
     clickOnLeave.play();
     clickOnLeave.volume = Math.random();
   };
