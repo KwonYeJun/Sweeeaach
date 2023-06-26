@@ -6,7 +6,7 @@ import Title from "./components/title";
 import HelpText from "./components/helpText";
 import SelectSwitch from "./components/selectSwitch";
 
-import ClickSwitch from "./components/svgClick";
+import ClickSwitchSVG from "./components/svgClick";
 // import "./css/root.css";
 
 export default function App() {
@@ -16,9 +16,7 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/clickSwitch" element={<ClickSwitch />}></Route>
-        <Route path="/tactileSwitch" element={<ClickSwitch />}></Route>
-        <Route path="/linearSwitch" element={<ClickSwitch />}></Route>
+        <Route path="/clickSwitch" element={<ClickSwitchSVG />}></Route>
       </Routes>
       <Box
         display={"flex"}
