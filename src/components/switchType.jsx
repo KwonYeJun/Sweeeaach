@@ -27,7 +27,7 @@ export default function () {
           gap={"10px"}
         >
           <Link to={"/clickSwitch"}>
-            <ClickSwitch></ClickSwitch>
+            <ClickSwitch />
           </Link>
           <Text
             fontFamily={"Pretendard"}
