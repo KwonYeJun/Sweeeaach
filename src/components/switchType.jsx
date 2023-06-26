@@ -1,6 +1,7 @@
 // 리액트 라이브러리
 import React from "react";
-
+import { Link } from "react-router-dom";
+// 리액트 컴포넌트
 import { Box, Image, Text } from "@chakra-ui/react";
 import ClickSwitch from "./clickSwitch";
 import TactileSwitch from "./tacitleSwitch";
@@ -25,7 +26,9 @@ export default function () {
           flexDirection={"column"}
           gap={"10px"}
         >
-          <ClickSwitch></ClickSwitch>
+          <Link to={"/clickSwitch"}>
+            <ClickSwitch></ClickSwitch>
+          </Link>
           <Text
             fontFamily={"Pretendard"}
             fontSize={35}
