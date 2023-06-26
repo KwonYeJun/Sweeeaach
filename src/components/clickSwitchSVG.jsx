@@ -9,7 +9,7 @@ export default function KeyBoardSVG() {
   const [test, settest] = useState(false);
   useEffect(() => {
     if (svgLoaded) {
-      const targetElement = document.getElementById("KeyBoard");
+      const targetElement = document.getElementById("KeyboardClickSwitch");
       if (targetElement) {
         console.log(targetElement);
         document.addEventListener("keydown", handleKeyDown);
@@ -924,11 +924,20 @@ export default function KeyBoardSVG() {
   };
 
   return (
-    <Box className="KeyboardBox">
-      <ReactSVG
-        src="svg/KeyBoard.svg"
-        afterInjection={() => setSvgLoaded(true)}
-      />
+    <Box
+      className="keyboardBoxArea"
+      width={"100%"}
+      height={"100vh"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+    >
+      <Box className="Keyboard" width={"50vw"}>
+        <ReactSVG
+          src="svg/clickSwitch.svg"
+          afterInjection={() => setSvgLoaded(true)}
+        />
+      </Box>
     </Box>
   );
 }
