@@ -19,7 +19,7 @@ export default function KeyBoardSVG() {
         console.log(targetElement.children[2]);
       }
     }
-
+ 
     return () => {
       if (svgLoaded) {
         const targetElement = document.getElementById("KeyBoard");
@@ -37,6 +37,17 @@ export default function KeyBoardSVG() {
       }
     };
   }, [svgLoaded]);
+  const playSound = () => {
+    const clickOnPush = new Audio("/audio/keysoundTest/clickOnPush.m4a");
+    clickOnPush.play();
+    clickOnPush.volume = Math.random();
+  };
+
+  const playSoundTwo = () => {
+    const clickOnLeave = new Audio("/audio/keysoundTest/clickLeavePush.m4a");
+    clickOnLeave.play();
+    clickOnLeave.volume = Math.random();
+  };
   const handleSvgInjection = (event, code) => {
     if (svgLoaded) {
       if (/^[0-9]$/.test(event)) {
@@ -911,17 +922,7 @@ export default function KeyBoardSVG() {
     playSoundTwo();
   };
 
-  const playSound = () => {
-    const clickOnPush = new Audio("/audio/keysoundTest/clickOnPush.m4a");
-    clickOnPush.play();
-    clickOnPush.volume = Math.random();
-  };
 
-  const playSoundTwo = () => {
-    const clickOnLeave = new Audio("/audio/keysoundTest/clickLeavePush.m4a");
-    clickOnLeave.play();
-    clickOnLeave.volume = Math.random();
-  };
 
   return (
     <Box
