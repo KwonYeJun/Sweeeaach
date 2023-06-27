@@ -4,7 +4,7 @@ import { Box, useColorMode, IconButton } from "@chakra-ui/react";
 
 import "../css/keyboard.css";
 
-export default function KeyBoardSVG() {
+export default function LinearKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
   const [test, settest] = useState(false);
   useEffect(() => {
@@ -912,15 +912,15 @@ export default function KeyBoardSVG() {
   };
 
   const playSound = () => {
-    const clickOnPush = new Audio("/audio/keysoundTest/linearOnPush.m4a");
-    clickOnPush.play();
-    clickOnPush.volume = Math.random();
+    const linearOnPush = new Audio("/audio/keysoundTest/linearOnPush.m4a");
+    linearOnPush.play();
+    linearOnPush.volume = Math.random();
   };
 
   const playSoundTwo = () => {
-    const clickOnLeave = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
-    clickOnLeave.play();
-    clickOnLeave.volume = Math.random();
+    const linearOnLeave = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
+    linearOnLeave.play();
+    linearOnLeave.volume = Math.random();
   };
 
   return (

@@ -4,7 +4,7 @@ import { Box, useColorMode, IconButton } from "@chakra-ui/react";
 
 import "../css/keyboard.css";
 
-export default function KeyBoardSVG() {
+export default function ClickKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
   const [test, settest] = useState(false);
   useEffect(() => {
