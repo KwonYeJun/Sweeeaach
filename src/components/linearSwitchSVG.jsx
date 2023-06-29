@@ -8,17 +8,16 @@ export default function LinearKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
 
   useEffect(() => {
-    let linearOnPushSound;
-    let linearOnLeaveSound;
+    const pressedKeys = new Set();
 
     const playSound = () => {
-      linearOnPushSound = new Audio("/audio/keysoundTest/linearOnPush.m4a");
+      const linearOnPushSound = new Audio("/audio/keysoundTest/linearOnPush.m4a");
       linearOnPushSound.play();
       linearOnPushSound.volume = Math.random();
     };
 
     const playSoundTwo = () => {
-      linearOnLeaveSound = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
+      const linearOnLeaveSound = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
       linearOnLeaveSound.play();
       linearOnLeaveSound.volume = Math.random();
     };
@@ -26,7 +25,12 @@ export default function LinearKeyBoardSVG() {
     const handleKeyDown = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
-      console.log(event.code, " 이거");
+
+      if (pressedKeys.has(pressedKey)) {
+        return; // 키가 이미 눌러져 있다면, 이벤트를 무시하고 반환
+      }
+
+      pressedKeys.add(pressedKey); // 키 추가
       handleSvgInjection(pressedKey, event.code);
       console.log(pressedKey);
       playSound();
@@ -35,6 +39,8 @@ export default function LinearKeyBoardSVG() {
     const handleKeyUp = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
+
+      pressedKeys.delete(pressedKey); // 키 뗌 이벤트 발생 시 키를 집합에서 삭제
       console.log(`${pressedKey} 뗐음`);
       const svgElement = document.querySelector("svg");
       const rectElement = svgElement.querySelector(`#${pressedKey}`);
@@ -58,20 +64,11 @@ export default function LinearKeyBoardSVG() {
       document.addEventListener("keyup", handleKeyUp);
     }
 
-    // 언마운트 시 이벤트 리스너 제거 및 사운드 정지
+    // 언마운트 시 이벤트 리스너 제거
     return () => {
       if (svgLoaded) {
         document.removeEventListener("keydown", handleKeyDown);
         document.removeEventListener("keyup", handleKeyUp);
-      }
-
-      if (linearOnPushSound) {
-        linearOnPushSound.pause();
-        linearOnPushSound = null;
-      }
-      if (linearOnLeaveSound) {
-        linearOnLeaveSound.pause();
-        linearOnLeaveSound = null;
       }
     };
   }, [svgLoaded]);
