@@ -8,17 +8,16 @@ export default function ClickKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
 
   useEffect(() => {
-    let clickOnPushSound;
-    let clickOnLeaveSound;
+    const pressedKeys = new Set();
 
     const playSound = () => {
-      clickOnPushSound = new Audio("/audio/keysoundTest/clickOnPush.m4a");
+      const clickOnPushSound = new Audio("/audio/keysoundTest/clickOnPush.m4a");
       clickOnPushSound.play();
       clickOnPushSound.volume = Math.random();
     };
 
     const playSoundTwo = () => {
-      clickOnLeaveSound = new Audio("/audio/keysoundTest/clickLeavePush.m4a");
+      const clickOnLeaveSound = new Audio("/audio/keysoundTest/clickOnLeave.m4a");
       clickOnLeaveSound.play();
       clickOnLeaveSound.volume = Math.random();
     };
@@ -26,7 +25,12 @@ export default function ClickKeyBoardSVG() {
     const handleKeyDown = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
-      console.log(event.code, " 이거");
+
+      if (pressedKeys.has(pressedKey)) {
+        return; // 키가 이미 눌러져 있다면, 이벤트를 무시하고 반환
+      }
+
+      pressedKeys.add(pressedKey); // 키 추가
       handleSvgInjection(pressedKey, event.code);
       console.log(pressedKey);
       playSound();
@@ -35,6 +39,8 @@ export default function ClickKeyBoardSVG() {
     const handleKeyUp = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
+
+      pressedKeys.delete(pressedKey); // 키 뗌 이벤트 발생 시 키를 집합에서 삭제
       console.log(`${pressedKey} 뗐음`);
       const svgElement = document.querySelector("svg");
       const rectElement = svgElement.querySelector(`#${pressedKey}`);
@@ -45,6 +51,7 @@ export default function ClickKeyBoardSVG() {
 
     const handleSvgInjection = (event, code) => {
       if (svgLoaded) {
+        // 여기 if 조건 문으로 작엉 하면 된다.
         const svgElement = document.querySelector("svg");
         const rectElement = svgElement.querySelector(`#${event}`);
         rectElement.style.fill = "#d90429";
@@ -58,20 +65,11 @@ export default function ClickKeyBoardSVG() {
       document.addEventListener("keyup", handleKeyUp);
     }
 
-    // 언마운트 시 이벤트 리스너 제거 및 사운드 정지
+    // 언마운트 시 이벤트 리스너 제거
     return () => {
       if (svgLoaded) {
         document.removeEventListener("keydown", handleKeyDown);
         document.removeEventListener("keyup", handleKeyUp);
-      }
-
-      if (clickOnPushSound) {
-        clickOnPushSound.pause();
-        clickOnPushSound = null;
-      }
-      if (clickOnLeaveSound) {
-        clickOnLeaveSound.pause();
-        clickOnLeaveSound = null;
       }
     };
   }, [svgLoaded]);
