@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // 리액트 컴포넌트
 import { Box, Image, Text } from "@chakra-ui/react";
 import ClickSwitch from "./clickSwitch";
-import TactileSwitch from "./tacitleSwitch";
+import TactileSwitch from "./tactileSwitch";
 import LinearSwitch from "./linearSwitch";
 
 import "@fontsource/Koulen";
@@ -53,7 +53,9 @@ export default function () {
           flexDirection={"column"}
           gap={"10px"}
         >
-          <TactileSwitch></TactileSwitch>
+          <Link to={"/tactileSwitch"}>
+            <TactileSwitch></TactileSwitch>
+          </Link>
           <Text
             fontFamily={"Pretendard"}
             fontSize={35}
