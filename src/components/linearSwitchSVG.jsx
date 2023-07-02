@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
 import { Box } from "@chakra-ui/react";
+// import hand from './testUpEvent'
+import { HandleSvgInjection } from './keyUpEvent';
 
 import "../css/keyboard.css";
 
@@ -31,7 +33,8 @@ export default function LinearKeyBoardSVG() {
       }
 
       pressedKeys.add(pressedKey); // 키 추가
-      handleSvgInjection(pressedKey, event.code);
+      // handleSvgInjection(pressedKey, event.code);
+      HandleSvgInjection(pressedKey, event.code,svgLoaded);
       console.log(pressedKey);
       playSound();
     };
