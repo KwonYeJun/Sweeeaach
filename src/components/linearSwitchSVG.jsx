@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
 import { Box } from "@chakra-ui/react";
 // import hand from './testUpEvent'
-import { HandleSvgInjection } from './keyUpEvent';
-
+import { KeyUpEvent } from './keyUpEvent';
+import { KeyDownEvent } from './keyDownEvent';
 import "../css/keyboard.css";
 
 export default function LinearKeyBoardSVG() {
@@ -33,8 +33,8 @@ export default function LinearKeyBoardSVG() {
       }
 
       pressedKeys.add(pressedKey); // 키 추가
-      // handleSvgInjection(pressedKey, event.code);
-      HandleSvgInjection(pressedKey, event.code,svgLoaded);
+  
+      KeyUpEvent(pressedKey, event.code,svgLoaded);
       console.log(pressedKey);
       playSound();
     };
@@ -42,24 +42,19 @@ export default function LinearKeyBoardSVG() {
     const handleKeyUp = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
-
       pressedKeys.delete(pressedKey); // 키 뗌 이벤트 발생 시 키를 집합에서 삭제
-      console.log(`${pressedKey} 뗐음`);
-      const svgElement = document.querySelector("svg");
-      const rectElement = svgElement.querySelector(`#${pressedKey}`);
-      rectElement.style.fill = null;
-      console.log("test", rectElement);
+      KeyDownEvent(pressedKey, event.code,svgLoaded)
       playSoundTwo();
     };
 
-    const handleSvgInjection = (event, code) => {
-      if (svgLoaded) {
-        const svgElement = document.querySelector("svg");
-        const rectElement = svgElement.querySelector(`#${event}`);
-        rectElement.style.fill = "#d90429";
-        console.log("test", rectElement);
-      }
-    };
+    // const handleSvgInjection = (event, code) => {
+    //   if (svgLoaded) {
+    //     const svgElement = document.querySelector("svg");
+    //     const rectElement = svgElement.querySelector(`#${event}`);
+    //     rectElement.style.fill = "#d90429";
+    //     console.log("test", rectElement);
+    //   }
+    // };
 
     // 마운트 시 이벤트 리스너 등록
     if (svgLoaded) {
