@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
-import { Box } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 import "../css/keyboard.css";
 
@@ -17,7 +17,9 @@ export default function ClickKeyBoardSVG() {
     };
 
     const playSoundTwo = () => {
-      const clickOnLeaveSound = new Audio("/audio/keysoundTest/clickOnLeave.m4a");
+      const clickOnLeaveSound = new Audio(
+        "/audio/keysoundTest/clickOnLeave.m4a"
+      );
       clickOnLeaveSound.play();
       clickOnLeaveSound.volume = Math.random();
     };
@@ -80,9 +82,35 @@ export default function ClickKeyBoardSVG() {
       width={"100%"}
       height={"100vh"}
       display={"flex"}
+      flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
     >
+      <Box className="keyboardInformationBox" display={"flex"} width={"50%"}>
+        <Box className="switchInformation" width={"100%"}>
+          <Heading
+            className="switchTitle"
+            fontSize={"140px"}
+            color={"#00A6FB"}
+            fontFamily={"Staatliches"}
+          >
+            CLICK
+          </Heading>
+          <Text fontFamily={"Pretendard"}>
+            체리MX 청축(Blue), 녹축(Clicky Green), 백축(Clicky White)이 이
+            분류에 해당된다. 다만, 녹축과 백축은 한국에서 구하기 힘들며 판매처도
+            해외구매 방식으로 판매하는 경우가 대부분이다. 구조를 보면 스템이
+            걸쇠를 포함한 부분과 몸체로 나뉘어져 별도로 움직인다. 해당 부품을
+            재킷이라고 부르는데, 걸쇠의 돌기 부분이 완전히 통과하면 재킷이
+            반발력에 의해 강하게 하강하여 특유의 찰칵하는 클릭 사운드를 만들어
+            내는게 특징이다. 청각적, 촉각적 피드백을 둘 다 최대한 자극적으로
+            유도한 스위치이기 때문에, 다른 방식의 키보드에서 기계식으로 넘어오는
+            입문자들이 주로 사용하던 스위치로 유명했다. 때문에 기계식키보드가
+            PC방에 도입될 때 대부분 해당 계열의 스위치로 도배가 되어 PC방 키보드
+            스위치의 대명사가 되었다.
+          </Text>
+        </Box>
+      </Box>
       <Box className="Keyboard" width={"50vw"}>
         <ReactSVG
           src="svg/clickSwitch.svg"
