@@ -8,7 +8,7 @@ import SelectSwitch from "./selectSwitch";
 export default function MainScreen() {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const backgroundColor = colorMode === "dark" ? "gray.800" : "gray.200";
+  const backgroundColor = colorMode === "dark" ? "gray.800" : "#D9D9D9";
 
   return (
     <Box

@@ -8,9 +8,6 @@ import LinearSwitchSVG from "./components/linearSwitchSVG";
 import TactileSwitchSVG from "./components/tactileSwitch.SVG";
 
 export default function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
-  const backgroundColor = colorMode === "dark" ? "gray.800" : "gray.200";
 
   return (
     <>
