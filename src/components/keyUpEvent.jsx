@@ -52,7 +52,7 @@ export function KeyUpEvent(event, code,svgLoaded) {
       console.log('L_Win_Cmd', rectElement);
     }  else if (code=== 'Backquote') {
       const svgElement = document.querySelector('svg');
-      const rectElement = svgElement.querySelector(`#___`);
+      const rectElement = svgElement.querySelector(`#_Backquote`);
       rectElement.style.fill = null;
       console.log('`', rectElement);
     } 
@@ -152,6 +152,12 @@ export function KeyUpEvent(event, code,svgLoaded) {
       rectElement.style.fill = null;
       console.log('Num9', rectElement);
     } 
+    else if (code === 'PrintScreencode'|| event ==="PrintScreencode ") {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#PrintScreencode `);
+      rectElement.style.fill = null;
+      console.log('PrintScreencode ', rectElement);
+    } 
     else if (/^[A-Z]$/.test(event)) {
       const lowercaseevent = event.toLowerCase(); // 대문자를 소문자로 변환
       const svgElement = document.querySelector("svg");
@@ -221,12 +227,7 @@ export function KeyUpEvent(event, code,svgLoaded) {
       rectElement.style.fill = null;
       console.log('특수문자', rectElement);
     }
-    else if (code === 'Backquote') {
-      const svgElement = document.querySelector('svg');
-      const rectElement = svgElement.querySelector(`#_`);
-      rectElement.style.fill = null;
-      console.log('`', rectElement);
-    } 
+
     else if (event === 'Home'&& isNotNumpadKey ) {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#Home`);;
@@ -235,7 +236,7 @@ export function KeyUpEvent(event, code,svgLoaded) {
     }
     else if (event === '[' || event === '{') {
       const svgElement = document.querySelector('svg');
-      const rectElement = svgElement.querySelector(`#_2-2`);
+      const rectElement = svgElement.querySelector(`#_22-22`);
       rectElement.style.fill = null;
       console.log('[', rectElement);
     }
@@ -245,7 +246,13 @@ export function KeyUpEvent(event, code,svgLoaded) {
       console.log(';', rectElement);
       rectElement.style.fill = null;
     }
-
+    
+    else if (code === 'ContextMenu') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#Fn`);
+      rectElement.style.fill = null;
+      console.log('Fn', rectElement);
+    }
     else if (event === 'HangulMode') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#R_Alt`);
@@ -260,7 +267,7 @@ export function KeyUpEvent(event, code,svgLoaded) {
     }
     else if (event === ']' || event === '}') {
       const svgElement = document.querySelector('svg');
-      const rectElement = svgElement.querySelector(`[data-name="]"]`);
+      const rectElement = svgElement.querySelector(`#_7-2`);
       rectElement.style.fill = null;
       console.log(']', rectElement);
     }
@@ -270,9 +277,9 @@ export function KeyUpEvent(event, code,svgLoaded) {
       console.log(',', rectElement);
       rectElement.style.fill = null;
     }
-    else if (event === '.' || event === '>') {
+    else if (code === 'Period' || event === '>') {
       const svgElement = document.querySelector('svg');
-      const rectElement = svgElement.querySelector(`[data-name="."]`);
+      const rectElement = svgElement.querySelector('#_33');
       console.log('.', rectElement);
       rectElement.style.fill = null;
     }
