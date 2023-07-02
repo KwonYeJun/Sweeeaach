@@ -31,9 +31,9 @@ export default function LinearKeyBoardSVG() {
       if (pressedKeys.has(pressedKey)) {
         return; // 키가 이미 눌러져 있다면, 이벤트를 무시하고 반환
       }
-      KeyDownEvent(pressedKey, event.code,svgLoaded);
-
+      
       pressedKeys.add(pressedKey); // 키 추가
+      KeyDownEvent(pressedKey, event.code,svgLoaded);
   
       console.log(pressedKey);
       playSound();
