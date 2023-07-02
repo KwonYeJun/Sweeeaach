@@ -7,7 +7,7 @@ import ClickSwitch from "./clickSwitch";
 import TactileSwitch from "./tactileSwitch";
 import LinearSwitch from "./linearSwitch";
 
-import "@fontsource/Koulen";
+import "@fontsource/staatliches";
 
 export default function () {
   return (
@@ -30,7 +30,7 @@ export default function () {
             <ClickSwitch />
           </Link>
           <Text
-            fontFamily={"Pretendard"}
+            fontFamily={"Staatliches"}
             fontSize={35}
             fontWeight={900}
             color={"#00A6FB"}
@@ -57,7 +57,7 @@ export default function () {
             <TactileSwitch></TactileSwitch>
           </Link>
           <Text
-            fontFamily={"Pretendard"}
+            fontFamily={"Staatliches"}
             fontSize={35}
             fontWeight={900}
             color={"#5E503F"}
@@ -84,7 +84,7 @@ export default function () {
             <LinearSwitch></LinearSwitch>
           </Link>
           <Text
-            fontFamily={"Pretendard"}
+            fontFamily={"Staatliches"}
             fontSize={35}
             fontWeight={900}
             color={"#DB3A34"}

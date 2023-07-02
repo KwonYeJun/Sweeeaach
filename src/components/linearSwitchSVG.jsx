@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactSVG } from "react-svg";
-import { Box } from "@chakra-ui/react";
+import { Box, Text, Heading } from "@chakra-ui/react";
 
 import "../css/keyboard.css";
 
@@ -11,13 +11,17 @@ export default function LinearKeyBoardSVG() {
     const pressedKeys = new Set();
 
     const playSound = () => {
-      const linearOnPushSound = new Audio("/audio/keysoundTest/linearOnPush.m4a");
+      const linearOnPushSound = new Audio(
+        "/audio/keysoundTest/linearOnPush.m4a"
+      );
       linearOnPushSound.play();
       linearOnPushSound.volume = Math.random();
     };
 
     const playSoundTwo = () => {
-      const linearOnLeaveSound = new Audio("/audio/keysoundTest/linearOnLeave.m4a");
+      const linearOnLeaveSound = new Audio(
+        "/audio/keysoundTest/linearOnLeave.m4a"
+      );
       linearOnLeaveSound.play();
       linearOnLeaveSound.volume = Math.random();
     };
@@ -79,9 +83,19 @@ export default function LinearKeyBoardSVG() {
       width={"100%"}
       height={"100vh"}
       display={"flex"}
+      flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
     >
+      <Box className="keyboardInformationBox">
+        <Heading
+          fontSize={"140px"}
+          color={"#DB3A34"}
+          fontFamily={"Staatliches"}
+        >
+          LINEAR
+        </Heading>
+      </Box>
       <Box className="Keyboard" width={"50vw"}>
         <ReactSVG
           src="svg/linearSwitch.svg"
