@@ -31,10 +31,10 @@ export default function LinearKeyBoardSVG() {
       if (pressedKeys.has(pressedKey)) {
         return; // 키가 이미 눌러져 있다면, 이벤트를 무시하고 반환
       }
+      KeyDownEvent(pressedKey, event.code,svgLoaded);
 
       pressedKeys.add(pressedKey); // 키 추가
   
-      KeyUpEvent(pressedKey, event.code,svgLoaded);
       console.log(pressedKey);
       playSound();
     };
@@ -43,7 +43,8 @@ export default function LinearKeyBoardSVG() {
       event.preventDefault();
       const pressedKey = event.key;
       pressedKeys.delete(pressedKey); // 키 뗌 이벤트 발생 시 키를 집합에서 삭제
-      KeyDownEvent(pressedKey, event.code,svgLoaded)
+      KeyUpEvent(pressedKey, event.code,svgLoaded);
+
       playSoundTwo();
     };
 
