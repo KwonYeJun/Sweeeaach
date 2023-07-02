@@ -3,11 +3,12 @@ import path from "path";
 
 const app = express();
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, '../','../')));
 
 app.get("*", (req: Request, res: Response) => {
   res.type("text/html");
-  res.sendFile(__dirname + "/index.html");
+  const test = path.join(__dirname,'../../dist/index.html');
+  res.sendFile(test);
 });
 
 // 404 페이지 작성

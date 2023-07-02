@@ -1,24 +1,34 @@
-import path from 'path';
+// import path from 'path';
 // CommonJs방식으로 작성을 해주어야 한다.
-const path = require('path');
-
+const path = require("path");
 
 module.exports = {
-  entry: './test.ts',
-  output:{
-    path: path.join(__dirname,'dist'),
-    filename: 'bundle.js',
+  entry: "./src/index.jsx",
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js",
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
-        test: [/\.ts$/, /\.tsx$/],
-        use: ['babel-loader','ts-loader']
-      }
-    ]
+        test: [/\.js$/, /\.jsx$/],
+        use: ["babel-loader"],
+      },
+      {
+        test: [/\.m4a$/],
+        use: ["file-loader"],
+      },
+      {
+        test: [/\.png$/],
+        use: ["file-loader"],
+      },
+      {
+        test: [/\.css$/],
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
-  resolve:{
-    extensions:['.ts',',tsx'],
-  }
-
-}
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".png"],
+  },
+};
