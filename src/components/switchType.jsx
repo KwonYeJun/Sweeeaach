@@ -25,6 +25,10 @@ export default function () {
           display={"flex"}
           flexDirection={"column"}
           gap={"10px"}
+          transition="0.2s ease"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
         >
           <Link to={"/clickSwitch"}>
             <ClickSwitch />
@@ -52,6 +56,10 @@ export default function () {
           display={"flex"}
           flexDirection={"column"}
           gap={"10px"}
+          transition="0.2s ease"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
         >
           <Link to={"/tactileSwitch"}>
             <TactileSwitch></TactileSwitch>
@@ -79,6 +87,10 @@ export default function () {
           display={"flex"}
           flexDirection={"column"}
           gap={"10px"}
+          transition="0.2s ease"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
         >
           <Link to={"/linearSwitch"}>
             <LinearSwitch></LinearSwitch>
