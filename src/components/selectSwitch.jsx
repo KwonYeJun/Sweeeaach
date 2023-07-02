@@ -2,7 +2,7 @@
 import React from "react";
 
 // 리액트 컴포넌트
-import SVGclick from "./clickSwitchSVG";
+// import SVGclick from "./clickSwitchSVG";
 import { Box, Image } from "@chakra-ui/react";
 import SwitchType from "./switchType";
 

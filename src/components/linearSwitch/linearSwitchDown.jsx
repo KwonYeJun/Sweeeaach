@@ -15,6 +15,12 @@ export function KeyDownEvent(event, code,svgLoaded) {
        rectElement.style.fill = "#d90429";
       console.log('SpaceBar', rectElement);
     } 
+    else if (code === 'NumpadDecimal') {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#_NumpadDecimal`);
+       rectElement.style.fill = "#d90429";
+      console.log('Num.', rectElement);
+    } 
     else if (code === 'ShiftLeft') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#LShift`);

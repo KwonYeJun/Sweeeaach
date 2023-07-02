@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import { useColorMode, IconButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import MainScreen from "./components/mainScreen";
-import ClickSwitchSVG from "./components/clickSwitchSVG";
-import LinearSwitchSVG from "./components/linearSwitchSVG";
-import TactileSwitchSVG from "./components/tactileSwitch.SVG";
+import ClickSwitchSVG from "./components/clickSwitch/clickSwitchSVG";
+import LinearSwitchSVG from "./components/linearSwitch/linearSwitchSVG";
+import TactileSwitchSVG from "./components/tactileSwitch/tactileSwitch.SVG";
 
 export default function App() {
 

@@ -3,9 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 // 리액트 컴포넌트
 import { Box, Image, Text } from "@chakra-ui/react";
-import ClickSwitch from "./clickSwitch";
-import TactileSwitch from "./tactileSwitch";
-import LinearSwitch from "./linearSwitch";
+import ClickSwitch from "./clickSwitch/clickSwitch";
+import TactileSwitch from "./tactileSwitch/tactileSwitch";
+import LinearSwitch from "./linearSwitch/linearSwitch";
 
 import "@fontsource/staatliches";
 

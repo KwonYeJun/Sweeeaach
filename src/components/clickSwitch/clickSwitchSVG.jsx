@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
 import { BsBackspace } from "react-icons/Bs";
-
-import "../css/keyboard.css";
+import { KeyUpEvent } from '../keyUpEvent';
+import { KeyDown } from './clickSwitchDown';
+import "../../css/keyboard.css";
 
 export default function ClickKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
@@ -33,35 +34,34 @@ export default function ClickKeyBoardSVG() {
       if (pressedKeys.has(pressedKey)) {
         return; // 키가 이미 눌러져 있다면, 이벤트를 무시하고 반환
       }
-
+      
       pressedKeys.add(pressedKey); // 키 추가
-      handleSvgInjection(pressedKey, event.code);
-      console.log(pressedKey);
+      console.log('이건코드',event.code); // 테스
+      KeyDown(pressedKey, event.code,svgLoaded);
+  
+      console.log('이건key',pressedKey);
       playSound();
     };
 
     const handleKeyUp = (event) => {
       event.preventDefault();
       const pressedKey = event.key;
-
       pressedKeys.delete(pressedKey); // 키 뗌 이벤트 발생 시 키를 집합에서 삭제
-      console.log(`${pressedKey} 뗐음`);
-      const svgElement = document.querySelector("svg");
-      const rectElement = svgElement.querySelector(`#${pressedKey}`);
-      rectElement.style.fill = null;
-      console.log("test", rectElement);
+      KeyUpEvent(pressedKey, event.code,svgLoaded);
+
       playSoundTwo();
     };
 
-    const handleSvgInjection = (event, code) => {
-      if (svgLoaded) {
-        // 여기 if 조건 문으로 작엉 하면 된다.
-        const svgElement = document.querySelector("svg");
-        const rectElement = svgElement.querySelector(`#${event}`);
-        rectElement.style.fill = "#d90429";
-        console.log("test", rectElement);
-      }
-    };
+
+    // const handleSvgInjection = (event, code) => {
+    //   if (svgLoaded) {
+    //     // 여기 if 조건 문으로 작엉 하면 된다.
+    //     const svgElement = document.querySelector("svg");
+    //     const rectElement = svgElement.querySelector(`#${event}`);
+    //     rectElement.style.fill = "#d90429";
+    //     console.log("test", rectElement);
+    //   }
+    // };
 
     // 마운트 시 이벤트 리스너 등록
     if (svgLoaded) {
