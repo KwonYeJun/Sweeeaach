@@ -79,7 +79,7 @@ export default function TactileKeyBoardSVG() {
 
   return (
     <Box
-      className="keyboardBoxArea"
+      className="container"
       width={"100%"}
       height={"100vh"}
       display={"flex"}
