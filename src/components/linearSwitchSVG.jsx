@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
-import { Box, Text, Heading, Image } from "@chakra-ui/react";
+import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
+import { BsBackspace } from "react-icons/Bs";
 
 import "../css/keyboard.css";
 
@@ -86,6 +88,7 @@ export default function LinearKeyBoardSVG() {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
+      gap="3%"
     >
       <Box className="keyboardInformationBox" display={"flex"} width={"50%"}>
         <Box className="switchInformation" width={"100%"}>
@@ -98,7 +101,7 @@ export default function LinearKeyBoardSVG() {
             LINEAR
           </Heading>
           <Text fontFamily={"Pretendard"}>
-          택타일 스위치와 다르게 스템의 돌기가 선형적(Linear), 즉 올곧은
+            택타일 스위치와 다르게 스템의 돌기가 선형적(Linear), 즉 올곧은
             직선이기 때문에 별도의 촉각적 걸림 없이 그대로 바닥까지 내려가는
             스위치이다. 대표적인 스위치는 적축(MX Red), 흑축(MX Black), 스피드
             은축(MX Speed Silver ). 저소음 적축과 저소음 흑축도 있다.
@@ -115,6 +118,11 @@ export default function LinearKeyBoardSVG() {
           afterInjection={() => setSvgLoaded(true)}
         />
       </Box>
+      <Link to={"/"}>
+        <Button leftIcon={<BsBackspace />} variant="solid">
+          Backspace
+        </Button>
+      </Link>
     </Box>
   );
 }

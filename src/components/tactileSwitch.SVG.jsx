@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
+import { BsBackspace } from "react-icons/Bs";
 
 import "../css/keyboard.css";
 
@@ -86,6 +88,7 @@ export default function TactileKeyBoardSVG() {
       flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
+      gap="3%"
     >
       <Box className="keyboardInformationBox" display={"flex"} width={"50%"}>
         <Box className="switchInformation" width={"100%"}>
@@ -119,6 +122,11 @@ export default function TactileKeyBoardSVG() {
           afterInjection={() => setSvgLoaded(true)}
         />
       </Box>
+      <Link to={"/"}>
+        <Button leftIcon={<BsBackspace />} variant="solid">
+          Backspace
+        </Button>
+      </Link>
     </Box>
   );
 }
