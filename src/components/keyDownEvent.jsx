@@ -221,6 +221,11 @@ export function KeyDownEvent(event, code,svgLoaded) {
           const rectElement = svgElement.querySelector(`#_2-2`);;
            rectElement.style.fill = "#d90429";
           console.log('특수문자', rectElement);
+        } else if (event === 'Home'&& isNotNumpadKey ) {
+          const svgElement = document.querySelector('svg');
+          const rectElement = svgElement.querySelector(`#Home`);;
+           rectElement.style.fill = "#d90429";
+          console.log('특수문자', rectElement);
         }
         else if (code === 'Backquote') {
           const svgElement = document.querySelector('svg');

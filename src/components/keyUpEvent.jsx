@@ -227,6 +227,12 @@ export function KeyUpEvent(event, code,svgLoaded) {
       rectElement.style.fill = null;
       console.log('`', rectElement);
     } 
+    else if (event === 'Home'&& isNotNumpadKey ) {
+      const svgElement = document.querySelector('svg');
+      const rectElement = svgElement.querySelector(`#Home`);;
+      rectElement.style.fill = null;
+      console.log('특수문자', rectElement);
+    }
     else if (event === '[' || event === '{') {
       const svgElement = document.querySelector('svg');
       const rectElement = svgElement.querySelector(`#_2-2`);

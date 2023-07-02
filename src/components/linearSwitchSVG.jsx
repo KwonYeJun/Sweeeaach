@@ -33,10 +33,10 @@ export default function LinearKeyBoardSVG() {
       }
       
       pressedKeys.add(pressedKey); // 키 추가
-      console.log(event.code); // 테스
+      console.log('이건코드',event.code); // 테스
       KeyDownEvent(pressedKey, event.code,svgLoaded);
   
-      console.log(pressedKey);
+      console.log('이건key',pressedKey);
       playSound();
     };
 
