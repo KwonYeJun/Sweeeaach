@@ -21,11 +21,11 @@ export default function MainScreen() {
   return (
     <Box
       display={"flex"}
-      width="100vw"
+      width="100%"
       height="100vh"
       className="container"
       flexDirection={"column"}
-      justifyContent={"space-evenly"}
+      justifyContent={"center"}
       textAlign={"center"}
       backgroundColor={backgroundColor}
       mx={"auto"}
