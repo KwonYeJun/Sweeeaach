@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
-import { BsBackspace } from "react-icons/Bs";
+import { BsBackspace } from "react-icons/bs";
 import { KeyUpEvent } from '../keyUpEvent';
 import { KeyDown } from './clickSwitchDown';
 import "../../css/keyboard.css";
