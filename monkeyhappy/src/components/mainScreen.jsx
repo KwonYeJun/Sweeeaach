@@ -25,7 +25,7 @@ export default function MainScreen() {
       height="100vh"
       className="container"
       flexDirection={"column"}
-      justifyContent={"center"}
+      justifyContent={"space-evenly"}
       textAlign={"center"}
       backgroundColor={backgroundColor}
       mx={"auto"}
@@ -36,7 +36,7 @@ export default function MainScreen() {
       <Box
         className="creatorGithub"
         display={"flex"}
-        justifyContent={"center"}
+        justifyContent={"center"}S
         gap="20px"
       >
         <Link to={"https://github.com/KwonYeJun"}>
