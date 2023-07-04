@@ -1,6 +1,14 @@
 import React from "react";
-import { Box, useColorMode, IconButton } from "@chakra-ui/react";
+import {
+  Box,
+  useColorMode,
+  IconButton,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { FaGithub } from "react-icons/Fa";
 import Title from "./title";
 import HelpText from "./helpText";
 import SelectSwitch from "./selectSwitch";
@@ -25,6 +33,24 @@ export default function MainScreen() {
       <Title />
       <SelectSwitch />
       <HelpText />
+      <Box
+        className="creatorGithub"
+        display={"flex"}
+        justifyContent={"center"}
+        gap="20px"
+      >
+        <Link to={"https://github.com/KwonYeJun"}>
+          <Button colorScheme="gray" leftIcon={<FaGithub />}>
+            KwonYeJun
+          </Button>
+        </Link>
+
+        <Link to={"https://github.com/krapli441"}>
+          <Button colorScheme="gray" leftIcon={<FaGithub />}>
+            krapli441
+          </Button>
+        </Link>
+      </Box>
       <IconButton
         display={"flex"}
         justifyContent={"center"}

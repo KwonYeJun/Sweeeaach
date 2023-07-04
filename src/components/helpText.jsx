@@ -16,7 +16,10 @@ export default function helpText() {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Text fontSize={24} fontFamily={"Pretendard"}>스위치를 클릭하여 테스트 해보세요.</Text>
+      <Text fontSize={24} fontFamily={"Pretendard"}>
+        기계식 키보드에서 가장 인기있는 세가지 축의 소리를 담았습니다.<br></br>
+        자유롭게 타건하시고, 여러분에게 맞는 키보드는 어떤 축인지 찾아보세요.
+      </Text>
     </Box>
   );
 }
