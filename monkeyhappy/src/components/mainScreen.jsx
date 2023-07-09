@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { FaGithub } from "react-icons/Fa";
+import { FaGithub } from "react-icons/fa";
 import Title from "./title";
 import HelpText from "./helpText";
 import SelectSwitch from "./selectSwitch";
