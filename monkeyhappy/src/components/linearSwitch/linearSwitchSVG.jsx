@@ -114,7 +114,7 @@ export default function LinearKeyBoardSVG() {
       </Box>
       <Box className="Keyboard" width={"50vw"}>
         <ReactSVG
-          src="svg/bluekey.svg"
+          src="svg/testkey.svg"
           afterInjection={() => setSvgLoaded(true)}
         />
       </Box>
