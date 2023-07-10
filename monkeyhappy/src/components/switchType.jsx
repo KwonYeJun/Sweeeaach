@@ -6,6 +6,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import ClickSwitch from "./clickSwitch/clickSwitch";
 import TactileSwitch from "./tactileSwitch/tactileSwitch";
 import LinearSwitch from "./linearSwitch/linearSwitch";
+import BlackSwitch from "./blackSwitch/blackSwitch";
 
 import "@fontsource/staatliches";
 
@@ -102,6 +103,38 @@ export default function () {
             color={"#DB3A34"}
           >
             LINEAR
+          </Text>
+        </Box>
+      </Box>
+      <Box
+        className="switchBoxArea"
+        width={"15%"}
+        height={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Box
+          className="linearBox"
+          display={"flex"}
+          flexDirection={"column"}
+          gap={"10px"}
+          transition="0.2s ease"
+          _hover={{
+            transform: "scale(1.1)",
+          }}
+        >
+          <Link to={"/blackSwitch"}>
+            <BlackSwitch></BlackSwitch>
+          </Link>
+          <Text
+            fontFamily={"Staatliches"}
+            fontSize={35}
+            fontWeight={900}
+            color={"#101010"}
+          >
+            LINEAR
+            Black
           </Text>
         </Box>
       </Box>

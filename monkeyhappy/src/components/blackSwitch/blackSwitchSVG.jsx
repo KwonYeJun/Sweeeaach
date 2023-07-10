@@ -5,7 +5,7 @@ import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
 import { BsBackspace } from "react-icons/bs";
 // import hand from './testUpEvent'
 import { KeyUpEvent } from '../keyUpEvent';
-import { KeyDownEvent } from './linearSwitchDown';
+import { KeyDownEvent } from './blackSwitchDown';
 import "../../css/keyboard.css";
 
 export default function LinearKeyBoardSVG() {
@@ -95,7 +95,7 @@ export default function LinearKeyBoardSVG() {
           <Heading
             className="switchTitle"
             fontSize={"140px"}
-            color={"#DB3A34"}
+            color={"#101010"}
             fontFamily={"Staatliches"}
           >
             LINEAR
@@ -114,7 +114,7 @@ export default function LinearKeyBoardSVG() {
       </Box>
       <Box className="Keyboard" width={"50vw"}>
         <ReactSVG
-          src="svg/linearSwitch.svg"
+          src="svg/blackSwitch.svg"
           afterInjection={() => setSvgLoaded(true)}
         />
       </Box>

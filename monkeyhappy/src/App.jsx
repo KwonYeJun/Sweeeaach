@@ -5,8 +5,8 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import MainScreen from "./components/mainScreen";
 import ClickSwitchSVG from "./components/clickSwitch/clickSwitchSVG";
 import LinearSwitchSVG from "./components/linearSwitch/linearSwitchSVG";
-import TactileSwitchSVG from "./components/tactileSwitch/tactileSwitch.SVG";
-
+import TactileSwitchSVG from "./components/tactileSwitch/tactileSwitchSVG";
+import BlackSwitchSVG from "./components/blackSwitch/blackSwitchSVG";
 export default function App() {
 
   return (
@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/clickSwitch" element={<ClickSwitchSVG />} />
         <Route path="/linearSwitch" element={<LinearSwitchSVG />} />
         <Route path="/tactileSwitch" element={<TactileSwitchSVG />} />
+        <Route path="/blackSwitch" element={<BlackSwitchSVG />} />
       </Routes>
     </>
   );
