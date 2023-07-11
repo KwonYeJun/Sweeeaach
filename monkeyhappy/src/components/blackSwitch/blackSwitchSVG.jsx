@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import { Box, Text, Heading, Image, Button } from "@chakra-ui/react";
 import { BsBackspace } from "react-icons/bs";
-// import hand from './testUpEvent'
 import { KeyUpEvent } from '../keyUpEvent';
 import { KeyDownEvent } from './blackSwitchDown';
 import "../../css/keyboard.css";
@@ -55,14 +54,6 @@ export default function LinearKeyBoardSVG() {
       playSoundTwo();
     };
 
-    // const handleSvgInjection = (event, code) => {
-    //   if (svgLoaded) {
-    //     const svgElement = document.querySelector("svg");
-    //     const rectElement = svgElement.querySelector(`#${event}`);
-    //     rectElement.style.fill = "#d90429";
-    //     console.log("test", rectElement);
-    //   }
-    // };
 
     // 마운트 시 이벤트 리스너 등록
     if (svgLoaded) {
@@ -101,14 +92,7 @@ export default function LinearKeyBoardSVG() {
             LINEAR
           </Heading>
           <Text fontFamily={"Pretendard"}>
-            택타일 스위치와 다르게 스템의 돌기가 선형적(Linear), 즉 올곧은
-            직선이기 때문에 별도의 촉각적 걸림 없이 그대로 바닥까지 내려가는
-            스위치이다. 대표적인 스위치는 적축(MX Red), 흑축(MX Black), 스피드
-            은축(MX Speed Silver ). 저소음 적축과 저소음 흑축도 있다.
-            진회축(Dark Grey, 혹은 Linear Grey)도 존재하지만 체리 홈페이지에는
-            등재되지 않았다. 택타일 스위치인 회축(Grey)의 스프링을 사용한 리니어
-            스위치인데, 그 무겁다는 흑축보다 무거워서 실사용하기엔 버거운 수준.
-            때문에 상당히 희귀하다.
+          많이 사용되는 키축타입은 아니지만 스위치 부분이 리니어 방식으로 되어 있어 적은 소음과 부드러움이 있지만 높은 키압을 가지고 있어 부드러운 눌림과 높은 키압으로 인한 묵직함이 동시에 존재하는 독특한 키축 방식입니다.
           </Text>
         </Box>
       </Box>
