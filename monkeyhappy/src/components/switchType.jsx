@@ -133,7 +133,6 @@ export default function () {
             fontWeight={900}
             color={"#101010"}
           >
-            LINEAR
             Black
           </Text>
         </Box>
