@@ -9,9 +9,9 @@ import "../../css/keyboard.css";
 // import linearOnPushSoundFile from "/audio/keysoundTest/linearOnPush.m4a";
 // import linearOnLeaveSoundFile from "/audio/keysoundTest/linearOnLeave.m4a";
 
-import linearOnPushSoundFile from "../../audio/keysoundTest/linearOnPush.m4a";
-import linearOnLeaveSoundFile from "../../audio/keysoundTest/linearOnLeave.m4a";
 
+import linearOnPushSoundFile from "../../audio/keysoundTest/blackOnPush.wav";
+import linearOnLeaveSoundFile from "../../audio/keysoundTest/blackOnLeave.wav";
 
 export default function LinearKeyBoardSVG() {
   const [svgLoaded, setSvgLoaded] = useState(false);
