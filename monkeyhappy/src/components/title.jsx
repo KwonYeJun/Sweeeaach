@@ -21,7 +21,7 @@ export default function title() {
       alignItems={"center"}
     >
       <Text fontSize="64" fontFamily={"jura"}>
-        fortunate simian
+      KeyTypers
       </Text>
     </Box>
   );
